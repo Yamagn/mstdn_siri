@@ -17,6 +17,7 @@
 		521E8B85215610C000814270 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B84215610C000814270 /* IntentHandler.swift */; };
 		521E8B89215610C000814270 /* TootTest.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 521E8B82215610C000814270 /* TootTest.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		521E8B8F2156110700814270 /* Toot.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B8E2156110700814270 /* Toot.intentdefinition */; };
+		52DA43902169CB88008C7B42 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA438F2169CB88008C7B42 /* loginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		521E8B84215610C000814270 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		521E8B86215610C000814270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521E8B8E2156110700814270 /* Toot.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Toot.intentdefinition; sourceTree = "<group>"; };
+		52DA438F2169CB88008C7B42 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				521E8B5421560FF800814270 /* Assets.xcassets */,
 				521E8B5621560FF800814270 /* LaunchScreen.storyboard */,
 				521E8B5921560FF800814270 /* Info.plist */,
+				52DA438F2169CB88008C7B42 /* loginViewController.swift */,
 			);
 			path = TootFromSiri;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			files = (
 				521E8B5021560FF700814270 /* ViewController.swift in Sources */,
 				521E8B4E21560FF700814270 /* AppDelegate.swift in Sources */,
+				52DA43902169CB88008C7B42 /* loginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
