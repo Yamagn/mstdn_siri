@@ -1,0 +1,740 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		521E8B4E21560FF700814270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B4D21560FF700814270 /* AppDelegate.swift */; };
+		521E8B5021560FF700814270 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B4F21560FF700814270 /* ViewController.swift */; };
+		521E8B5321560FF700814270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E8B5121560FF700814270 /* Main.storyboard */; };
+		521E8B5521560FF800814270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521E8B5421560FF800814270 /* Assets.xcassets */; };
+		521E8B5821560FF800814270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E8B5621560FF800814270 /* LaunchScreen.storyboard */; };
+		521E8B6321560FF900814270 /* TootFromSiriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B6221560FF900814270 /* TootFromSiriTests.swift */; };
+		521E8B6E21560FF900814270 /* TootFromSiriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B6D21560FF900814270 /* TootFromSiriUITests.swift */; };
+		521E8B85215610C000814270 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B84215610C000814270 /* IntentHandler.swift */; };
+		521E8B89215610C000814270 /* TootTest.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 521E8B82215610C000814270 /* TootTest.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		521E8B8F2156110700814270 /* Toot.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B8E2156110700814270 /* Toot.intentdefinition */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		521E8B5F21560FF900814270 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 521E8B4221560FF700814270 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 521E8B4921560FF700814270;
+			remoteInfo = TootFromSiri;
+		};
+		521E8B6A21560FF900814270 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 521E8B4221560FF700814270 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 521E8B4921560FF700814270;
+			remoteInfo = TootFromSiri;
+		};
+		521E8B87215610C000814270 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 521E8B4221560FF700814270 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 521E8B81215610C000814270;
+			remoteInfo = TootTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		521E8B8D215610C100814270 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				521E8B89215610C000814270 /* TootTest.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		521E8B4A21560FF700814270 /* TootFromSiri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TootFromSiri.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		521E8B4D21560FF700814270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		521E8B4F21560FF700814270 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		521E8B5221560FF700814270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		521E8B5421560FF800814270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		521E8B5721560FF800814270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		521E8B5921560FF800814270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		521E8B5E21560FF900814270 /* TootFromSiriTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TootFromSiriTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		521E8B6221560FF900814270 /* TootFromSiriTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootFromSiriTests.swift; sourceTree = "<group>"; };
+		521E8B6421560FF900814270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		521E8B6921560FF900814270 /* TootFromSiriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TootFromSiriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		521E8B6D21560FF900814270 /* TootFromSiriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootFromSiriUITests.swift; sourceTree = "<group>"; };
+		521E8B6F21560FF900814270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		521E8B7B2156101C00814270 /* TootFromSiri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TootFromSiri.entitlements; sourceTree = "<group>"; };
+		521E8B82215610C000814270 /* TootTest.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TootTest.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		521E8B84215610C000814270 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		521E8B86215610C000814270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		521E8B8E2156110700814270 /* Toot.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Toot.intentdefinition; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		521E8B4721560FF700814270 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521E8B5B21560FF900814270 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521E8B6621560FF900814270 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521E8B7F215610C000814270 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		521E8B4121560FF700814270 = {
+			isa = PBXGroup;
+			children = (
+				521E8B4C21560FF700814270 /* TootFromSiri */,
+				521E8B6121560FF900814270 /* TootFromSiriTests */,
+				521E8B6C21560FF900814270 /* TootFromSiriUITests */,
+				521E8B83215610C000814270 /* TootTest */,
+				521E8B4B21560FF700814270 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		521E8B4B21560FF700814270 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				521E8B4A21560FF700814270 /* TootFromSiri.app */,
+				521E8B5E21560FF900814270 /* TootFromSiriTests.xctest */,
+				521E8B6921560FF900814270 /* TootFromSiriUITests.xctest */,
+				521E8B82215610C000814270 /* TootTest.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		521E8B4C21560FF700814270 /* TootFromSiri */ = {
+			isa = PBXGroup;
+			children = (
+				521E8B8E2156110700814270 /* Toot.intentdefinition */,
+				521E8B7B2156101C00814270 /* TootFromSiri.entitlements */,
+				521E8B4D21560FF700814270 /* AppDelegate.swift */,
+				521E8B4F21560FF700814270 /* ViewController.swift */,
+				521E8B5121560FF700814270 /* Main.storyboard */,
+				521E8B5421560FF800814270 /* Assets.xcassets */,
+				521E8B5621560FF800814270 /* LaunchScreen.storyboard */,
+				521E8B5921560FF800814270 /* Info.plist */,
+			);
+			path = TootFromSiri;
+			sourceTree = "<group>";
+		};
+		521E8B6121560FF900814270 /* TootFromSiriTests */ = {
+			isa = PBXGroup;
+			children = (
+				521E8B6221560FF900814270 /* TootFromSiriTests.swift */,
+				521E8B6421560FF900814270 /* Info.plist */,
+			);
+			path = TootFromSiriTests;
+			sourceTree = "<group>";
+		};
+		521E8B6C21560FF900814270 /* TootFromSiriUITests */ = {
+			isa = PBXGroup;
+			children = (
+				521E8B6D21560FF900814270 /* TootFromSiriUITests.swift */,
+				521E8B6F21560FF900814270 /* Info.plist */,
+			);
+			path = TootFromSiriUITests;
+			sourceTree = "<group>";
+		};
+		521E8B83215610C000814270 /* TootTest */ = {
+			isa = PBXGroup;
+			children = (
+				521E8B84215610C000814270 /* IntentHandler.swift */,
+				521E8B86215610C000814270 /* Info.plist */,
+			);
+			path = TootTest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		521E8B4921560FF700814270 /* TootFromSiri */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 521E8B7221560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiri" */;
+			buildPhases = (
+				521E8B4621560FF700814270 /* Sources */,
+				521E8B4721560FF700814270 /* Frameworks */,
+				521E8B4821560FF700814270 /* Resources */,
+				521E8B8D215610C100814270 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				521E8B88215610C000814270 /* PBXTargetDependency */,
+			);
+			name = TootFromSiri;
+			productName = TootFromSiri;
+			productReference = 521E8B4A21560FF700814270 /* TootFromSiri.app */;
+			productType = "com.apple.product-type.application";
+		};
+		521E8B5D21560FF900814270 /* TootFromSiriTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 521E8B7521560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiriTests" */;
+			buildPhases = (
+				521E8B5A21560FF900814270 /* Sources */,
+				521E8B5B21560FF900814270 /* Frameworks */,
+				521E8B5C21560FF900814270 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				521E8B6021560FF900814270 /* PBXTargetDependency */,
+			);
+			name = TootFromSiriTests;
+			productName = TootFromSiriTests;
+			productReference = 521E8B5E21560FF900814270 /* TootFromSiriTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		521E8B6821560FF900814270 /* TootFromSiriUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 521E8B7821560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiriUITests" */;
+			buildPhases = (
+				521E8B6521560FF900814270 /* Sources */,
+				521E8B6621560FF900814270 /* Frameworks */,
+				521E8B6721560FF900814270 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				521E8B6B21560FF900814270 /* PBXTargetDependency */,
+			);
+			name = TootFromSiriUITests;
+			productName = TootFromSiriUITests;
+			productReference = 521E8B6921560FF900814270 /* TootFromSiriUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		521E8B81215610C000814270 /* TootTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 521E8B8A215610C100814270 /* Build configuration list for PBXNativeTarget "TootTest" */;
+			buildPhases = (
+				521E8B7E215610C000814270 /* Sources */,
+				521E8B7F215610C000814270 /* Frameworks */,
+				521E8B80215610C000814270 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TootTest;
+			productName = TootTest;
+			productReference = 521E8B82215610C000814270 /* TootTest.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		521E8B4221560FF700814270 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = ymgn;
+				TargetAttributes = {
+					521E8B4921560FF700814270 = {
+						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
+					};
+					521E8B5D21560FF900814270 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 521E8B4921560FF700814270;
+					};
+					521E8B6821560FF900814270 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 521E8B4921560FF700814270;
+					};
+					521E8B81215610C000814270 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 521E8B4521560FF700814270 /* Build configuration list for PBXProject "TootFromSiri" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 521E8B4121560FF700814270;
+			productRefGroup = 521E8B4B21560FF700814270 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				521E8B4921560FF700814270 /* TootFromSiri */,
+				521E8B5D21560FF900814270 /* TootFromSiriTests */,
+				521E8B6821560FF900814270 /* TootFromSiriUITests */,
+				521E8B81215610C000814270 /* TootTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		521E8B4821560FF700814270 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521E8B5821560FF800814270 /* LaunchScreen.storyboard in Resources */,
+				521E8B5521560FF800814270 /* Assets.xcassets in Resources */,
+				521E8B5321560FF700814270 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521E8B5C21560FF900814270 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521E8B6721560FF900814270 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521E8B80215610C000814270 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		521E8B4621560FF700814270 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521E8B5021560FF700814270 /* ViewController.swift in Sources */,
+				521E8B4E21560FF700814270 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521E8B5A21560FF900814270 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521E8B6321560FF900814270 /* TootFromSiriTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521E8B6521560FF900814270 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521E8B6E21560FF900814270 /* TootFromSiriUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		521E8B7E215610C000814270 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521E8B8F2156110700814270 /* Toot.intentdefinition in Sources */,
+				521E8B85215610C000814270 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		521E8B6021560FF900814270 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 521E8B4921560FF700814270 /* TootFromSiri */;
+			targetProxy = 521E8B5F21560FF900814270 /* PBXContainerItemProxy */;
+		};
+		521E8B6B21560FF900814270 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 521E8B4921560FF700814270 /* TootFromSiri */;
+			targetProxy = 521E8B6A21560FF900814270 /* PBXContainerItemProxy */;
+		};
+		521E8B88215610C000814270 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 521E8B81215610C000814270 /* TootTest */;
+			targetProxy = 521E8B87215610C000814270 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		521E8B5121560FF700814270 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				521E8B5221560FF700814270 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		521E8B5621560FF800814270 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				521E8B5721560FF800814270 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		521E8B7021560FF900814270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		521E8B7121560FF900814270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		521E8B7321560FF900814270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TootFromSiri/TootFromSiri.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX5RLE299P;
+				INFOPLIST_FILE = TootFromSiri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		521E8B7421560FF900814270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TootFromSiri/TootFromSiri.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX5RLE299P;
+				INFOPLIST_FILE = TootFromSiri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		521E8B7621560FF900814270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX5RLE299P;
+				INFOPLIST_FILE = TootFromSiriTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiriTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TootFromSiri.app/TootFromSiri";
+			};
+			name = Debug;
+		};
+		521E8B7721560FF900814270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX5RLE299P;
+				INFOPLIST_FILE = TootFromSiriTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiriTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TootFromSiri.app/TootFromSiri";
+			};
+			name = Release;
+		};
+		521E8B7921560FF900814270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX5RLE299P;
+				INFOPLIST_FILE = TootFromSiriUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiriUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TootFromSiri;
+			};
+			name = Debug;
+		};
+		521E8B7A21560FF900814270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX5RLE299P;
+				INFOPLIST_FILE = TootFromSiriUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiriUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TootFromSiri;
+			};
+			name = Release;
+		};
+		521E8B8B215610C100814270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX5RLE299P;
+				INFOPLIST_FILE = TootTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiri.TootTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		521E8B8C215610C100814270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX5RLE299P;
+				INFOPLIST_FILE = TootTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiri.TootTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		521E8B4521560FF700814270 /* Build configuration list for PBXProject "TootFromSiri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521E8B7021560FF900814270 /* Debug */,
+				521E8B7121560FF900814270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		521E8B7221560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521E8B7321560FF900814270 /* Debug */,
+				521E8B7421560FF900814270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		521E8B7521560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiriTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521E8B7621560FF900814270 /* Debug */,
+				521E8B7721560FF900814270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		521E8B7821560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiriUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521E8B7921560FF900814270 /* Debug */,
+				521E8B7A21560FF900814270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		521E8B8A215610C100814270 /* Build configuration list for PBXNativeTarget "TootTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521E8B8B215610C100814270 /* Debug */,
+				521E8B8C215610C100814270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 521E8B4221560FF700814270 /* Project object */;
+}
