@@ -7,13 +7,36 @@
 //
 
 import UIKit
+import Intents
 
 class ViewController: UIViewController {
     
     // Mastodonのインスタンスから返ってくるjson格納用
     var responseJson = Dictionary<String, AnyObject>()
     
-    let session = URLSession.shared
+    public class HttpClientImpl {
+        private let session: URLSession
+        public  init(config: URLSessionConfiguration? = nil) {
+            self.session = config.map { URLSession(configuration: $0) } ?? URLSession.shared
+        }
+        
+        public func execute(request: URLRequest) -> (NSData?, URLResponse?, NSError?) {
+            var d: NSData? = nil
+            var r: URLResponse? = nil
+            var e: NSError? = nil
+            let semaphore = DispatchSemaphore(value: 0)
+            session.dataTask(with: request) { (data, response, error) -> Void in
+                d = data as NSData?
+                r = response
+                e = error as NSError?
+                semaphore.signal()
+            }.resume()
+            _ = semaphore.wait(timeout: DispatchTime.distantFuture)
+            return(d, r, e)
+        }
+    }
+    
+//    let session = URLSession.shared
     
     // POST メソッド
     func post(url: URL, body: Dictionary<String, String>, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) throws {
@@ -23,18 +46,22 @@ class ViewController: UIViewController {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
         
-        session.dataTask(with: request, completionHandler: completionHandler).resume()
+        let session = HttpClientImpl()
+        session.execute(request: request as URLRequest)
     }
 
     @IBOutlet weak var TootContent: UITextField!
     @IBOutlet weak var Indicator: UIActivityIndicatorView!
     @IBOutlet weak var domainText: UITextField!
+    @IBOutlet weak var mailText: UITextField!
+    @IBOutlet weak var passText: UITextField!
+    
     
     
     @IBAction func loginButton(_ sender: Any) {
         
-        if domainText.text == nil{
-            let alert = UIAlertController(title: "入力エラー", message: "ドメインが正しく入力されていません", preferredStyle: UIAlertController.Style.alert)
+        if domainText.text == nil || mailText.text == nil || passText == nil{
+            let alert = UIAlertController(title: "入力エラー", message: "正しく入力されていません", preferredStyle: UIAlertController.Style.alert)
             let defaultAction: UIAlertAction = UIAlertAction(title: "閉じる", style: UIAlertAction.Style.cancel, handler:{
                 (action: UIAlertAction!) -> Void in
                 return
@@ -44,20 +71,28 @@ class ViewController: UIViewController {
             
             present(alert, animated: true, completion: nil)
         }
+        self.regist()
+        self.loginAuth()
         
-        regist()
     }
     
     @IBAction func TootButton(_ sender: Any) {
         Indicator.startAnimating()
-        let tootUrl = URL(string: "https://mstdn.maud.io/api/v1/statuses")!
+        let tootUrl = URL(string: "https://" + domainText.text! + "/api/v1/statuses")!
         
         let tootBody: [String: String] = ["access_token": responseJson["access_token"] as! String, "status": self.TootContent.text!, "visibility": "public"]
         
         do {
-            try post(url: tootUrl, body: tootBody) {data, response, error in
-                
-            }
+            var request: URLRequest = URLRequest(url: tootUrl)
+            
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = try JSONSerialization.data(withJSONObject: tootBody, options: .prettyPrinted)
+            
+            let session = HttpClientImpl()
+            var (data, _, _) = session.execute(request: request as URLRequest)
+            self.responseJson = try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as! Dictionary<String, AnyObject>
+            
             Indicator.stopAnimating()
             
             let alert = UIAlertController(title: "成功！", message: "トゥートしました", preferredStyle: UIAlertController.Style.alert)
@@ -73,28 +108,81 @@ class ViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let login = segue.destination as? loginViewController
-        let _ = login?.view
-        login?.resJson = self.responseJson
-    }
-    
     func regist(){
         let registUrl = URL(string: "https://" + domainText.text! + "/api/v1/apps")!
         
         let registBody: [String: String] = ["client_name": "TootFromSiri", "redirect_uris": "urn:ietf:wg:oauth:2.0:oob", "scopes": "write"]
         
         do {
-            try post(url: registUrl, body: registBody) { data, response, error in
-                do {
-                    self.responseJson = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! Dictionary<String, AnyObject>
-                } catch{
-                    return
-                }
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
-            }
+            var request: URLRequest = URLRequest(url: registUrl)
+            
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = try JSONSerialization.data(withJSONObject: registBody, options: .prettyPrinted)
+            
+            let session = HttpClientImpl()
+            var (data, _, _) = session.execute(request: request as URLRequest)
+            self.responseJson = try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as! Dictionary<String, AnyObject>
+        } catch {
+            let alert = UIAlertController(title: "失敗", message: "ログインに失敗しました", preferredStyle: UIAlertController.Style.alert)
+            let defaultAction: UIAlertAction = UIAlertAction(title: "閉じる", style: UIAlertAction.Style.cancel, handler:{
+                (action: UIAlertAction!) -> Void in
+                self.navigationController?.popViewController(animated: true)
+            })
+            
+            alert.addAction(defaultAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+    }
+    
+    func loginAuth(){
+        let loginUrl = URL(string: "https://" + domainText.text! + "/oauth/token")!
+        if responseJson["client_id"] == nil{
+            return
+        }
+        
+        let loginBody: [String: String] = ["scope": "write", "client_id": responseJson["client_id"] as! String, "client_secret": responseJson["client_secret"] as! String, "grant_type": "password", "username": mailText.text!, "password": passText.text!]
+        
+        do {
+            var request: URLRequest = URLRequest(url: loginUrl)
+        
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = try JSONSerialization.data(withJSONObject: loginBody, options: .prettyPrinted)
+            
+            let session = HttpClientImpl()
+            var (data, _, _) = session.execute(request: request as URLRequest)
+            self.responseJson = try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as! Dictionary<String, AnyObject>
+            let alert = UIAlertController(title: "成功", message: "ログインに成功しました", preferredStyle: UIAlertController.Style.alert)
+            let defaultAction: UIAlertAction = UIAlertAction(title: "閉じる", style: UIAlertAction.Style.cancel, handler:{
+                (action: UIAlertAction!) -> Void in
+                self.navigationController?.popViewController(animated: true)
+            })
+            
+            alert.addAction(defaultAction)
+            
+            self.present(alert, animated: true, completion: nil)
         } catch {
             return
+        }
+    }
+    
+    func donateInteraction() {
+        let intent = TootIntent()
+        
+        intent.suggestedInvocationPhrase = "Toot"
+        
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate{ (error) in
+            if error != nil {
+                if let error = error as NSError? {
+                    print(error)
+                } else {
+                    print("Successfully donated interaction")
+                }
+            }
         }
     }
     
@@ -103,6 +191,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.Indicator.hidesWhenStopped = true
+        donateInteraction()
     }
 }
 
