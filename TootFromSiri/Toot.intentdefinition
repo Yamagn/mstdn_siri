@@ -16,7 +16,7 @@
 	<array>
 		<dict>
 			<key>INIntentCategory</key>
-			<string>information</string>
+			<string>generic</string>
 			<key>INIntentDescription</key>
 			<string>Speak to Toot</string>
 			<key>INIntentDescriptionID</key>
@@ -27,7 +27,7 @@
 			<string>Toot</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key>tootContent</key>
+				<key></key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
@@ -36,7 +36,7 @@
 					<key>INIntentParameterCombinationSubtitleID</key>
 					<string>ru16Uk</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<false/>
+					<true/>
 					<key>INIntentParameterCombinationTitle</key>
 					<string>Toot From Siri</string>
 					<key>INIntentParameterCombinationTitleID</key>
@@ -44,20 +44,7 @@
 				</dict>
 			</dict>
 			<key>INIntentParameters</key>
-			<array>
-				<dict>
-					<key>INIntentParameterDisplayPriority</key>
-					<integer>1</integer>
-					<key>INIntentParameterName</key>
-					<string>tootContent</string>
-					<key>INIntentParameterSupportsMultipleValues</key>
-					<false/>
-					<key>INIntentParameterTag</key>
-					<integer>1</integer>
-					<key>INIntentParameterType</key>
-					<string>String</string>
-				</dict>
-			</array>
+			<array/>
 			<key>INIntentResponse</key>
 			<dict>
 				<key>INIntentResponseCodes</key>
@@ -110,9 +97,9 @@
 			<key>INIntentType</key>
 			<string>Custom</string>
 			<key>INIntentUserConfirmationRequired</key>
-			<true/>
+			<false/>
 			<key>INIntentVerb</key>
-			<string>Open</string>
+			<string>Do</string>
 		</dict>
 	</array>
 </dict>

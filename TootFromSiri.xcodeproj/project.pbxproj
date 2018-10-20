@@ -15,9 +15,11 @@
 		521E8B6321560FF900814270 /* TootFromSiriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B6221560FF900814270 /* TootFromSiriTests.swift */; };
 		521E8B6E21560FF900814270 /* TootFromSiriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B6D21560FF900814270 /* TootFromSiriUITests.swift */; };
 		52237A022172F054003DFCA9 /* Toot.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52237A012172F054003DFCA9 /* Toot.intentdefinition */; };
-		52237A21217311C3003DFCA9 /* TootTest.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52237A08217311C3003DFCA9 /* TootTest.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		52237A2D217312BB003DFCA9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52237A2C217312BB003DFCA9 /* Info.plist */; };
-		52237A3021731310003DFCA9 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52237A2F2173130F003DFCA9 /* IntentHandler.swift */; };
+		523CEA72217AB6F7004E18DE /* TootTest.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 523CEA5B217AB6F6004E18DE /* TootTest.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		523CEA7A217AB74C004E18DE /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CEA79217AB74C004E18DE /* IntentHandler.swift */; };
+		523CEA7B217AB7F9004E18DE /* Toot.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52237A012172F054003DFCA9 /* Toot.intentdefinition */; };
+		523CEA7D217AC00E004E18DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B4F21560FF700814270 /* ViewController.swift */; };
+		523CEA80217AFC94004E18DE /* TootIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CEA7F217AFC94004E18DE /* TootIntentHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +37,12 @@
 			remoteGlobalIDString = 521E8B4921560FF700814270;
 			remoteInfo = TootFromSiri;
 		};
-		52237A1F217311C3003DFCA9 /* PBXContainerItemProxy */ = {
+		523CEA70217AB6F7004E18DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 521E8B4221560FF700814270 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 52237A07217311C3003DFCA9;
-			remoteInfo = TootIntent;
+			remoteGlobalIDString = 523CEA5A217AB6F6004E18DE;
+			remoteInfo = TootTest;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,7 +53,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				52237A21217311C3003DFCA9 /* TootTest.appex in Embed App Extensions */,
+				523CEA72217AB6F7004E18DE /* TootTest.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,10 +76,11 @@
 		521E8B6F21560FF900814270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521E8B7B2156101C00814270 /* TootFromSiri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TootFromSiri.entitlements; sourceTree = "<group>"; };
 		52237A012172F054003DFCA9 /* Toot.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = Toot.intentdefinition; sourceTree = "<group>"; };
-		52237A08217311C3003DFCA9 /* TootTest.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TootTest.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		52237A13217311C3003DFCA9 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
-		52237A2C217312BB003DFCA9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52237A2F2173130F003DFCA9 /* IntentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntentHandler.swift; path = ../../../.Trash/IntentHandler.swift; sourceTree = "<group>"; };
+		523CEA5B217AB6F6004E18DE /* TootTest.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TootTest.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		523CEA5F217AB6F6004E18DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		523CEA79217AB74C004E18DE /* IntentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		523CEA7F217AFC94004E18DE /* TootIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootIntentHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +105,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52237A05217311C3003DFCA9 /* Frameworks */ = {
+		523CEA58217AB6F6004E18DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -118,9 +121,9 @@
 				521E8B4C21560FF700814270 /* TootFromSiri */,
 				521E8B6121560FF900814270 /* TootFromSiriTests */,
 				521E8B6C21560FF900814270 /* TootFromSiriUITests */,
+				523CEA5C217AB6F6004E18DE /* TootTest */,
 				52237A12217311C3003DFCA9 /* Frameworks */,
 				521E8B4B21560FF700814270 /* Products */,
-				52237A2821731270003DFCA9 /* TootTest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,7 +133,7 @@
 				521E8B4A21560FF700814270 /* TootFromSiri.app */,
 				521E8B5E21560FF900814270 /* TootFromSiriTests.xctest */,
 				521E8B6921560FF900814270 /* TootFromSiriUITests.xctest */,
-				52237A08217311C3003DFCA9 /* TootTest.appex */,
+				523CEA5B217AB6F6004E18DE /* TootTest.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,11 +179,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		52237A2821731270003DFCA9 /* TootTest */ = {
+		523CEA5C217AB6F6004E18DE /* TootTest */ = {
 			isa = PBXGroup;
 			children = (
-				52237A2C217312BB003DFCA9 /* Info.plist */,
-				52237A2F2173130F003DFCA9 /* IntentHandler.swift */,
+				523CEA79217AB74C004E18DE /* IntentHandler.swift */,
+				523CEA5F217AB6F6004E18DE /* Info.plist */,
+				523CEA7F217AFC94004E18DE /* TootIntentHandler.swift */,
 			);
 			path = TootTest;
 			sourceTree = "<group>";
@@ -200,7 +204,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				52237A20217311C3003DFCA9 /* PBXTargetDependency */,
+				523CEA71217AB6F7004E18DE /* PBXTargetDependency */,
 			);
 			name = TootFromSiri;
 			productName = TootFromSiri;
@@ -243,21 +247,21 @@
 			productReference = 521E8B6921560FF900814270 /* TootFromSiriUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		52237A07217311C3003DFCA9 /* TootTest */ = {
+		523CEA5A217AB6F6004E18DE /* TootTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52237A25217311C3003DFCA9 /* Build configuration list for PBXNativeTarget "TootTest" */;
+			buildConfigurationList = 523CEA76217AB6F7004E18DE /* Build configuration list for PBXNativeTarget "TootTest" */;
 			buildPhases = (
-				52237A04217311C3003DFCA9 /* Sources */,
-				52237A05217311C3003DFCA9 /* Frameworks */,
-				52237A06217311C3003DFCA9 /* Resources */,
+				523CEA57217AB6F6004E18DE /* Sources */,
+				523CEA58217AB6F6004E18DE /* Frameworks */,
+				523CEA59217AB6F6004E18DE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TootTest;
-			productName = TootIntent;
-			productReference = 52237A08217311C3003DFCA9 /* TootTest.appex */;
+			productName = TootTest;
+			productReference = 523CEA5B217AB6F6004E18DE /* TootTest.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -286,7 +290,7 @@
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = 521E8B4921560FF700814270;
 					};
-					52237A07217311C3003DFCA9 = {
+					523CEA5A217AB6F6004E18DE = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
 					};
@@ -308,7 +312,7 @@
 				521E8B4921560FF700814270 /* TootFromSiri */,
 				521E8B5D21560FF900814270 /* TootFromSiriTests */,
 				521E8B6821560FF900814270 /* TootFromSiriUITests */,
-				52237A07217311C3003DFCA9 /* TootTest */,
+				523CEA5A217AB6F6004E18DE /* TootTest */,
 			);
 		};
 /* End PBXProject section */
@@ -338,11 +342,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52237A06217311C3003DFCA9 /* Resources */ = {
+		523CEA59217AB6F6004E18DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52237A2D217312BB003DFCA9 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,11 +378,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52237A04217311C3003DFCA9 /* Sources */ = {
+		523CEA57217AB6F6004E18DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52237A3021731310003DFCA9 /* IntentHandler.swift in Sources */,
+				523CEA80217AFC94004E18DE /* TootIntentHandler.swift in Sources */,
+				523CEA7D217AC00E004E18DE /* ViewController.swift in Sources */,
+				523CEA7B217AB7F9004E18DE /* Toot.intentdefinition in Sources */,
+				523CEA7A217AB74C004E18DE /* IntentHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,10 +402,10 @@
 			target = 521E8B4921560FF700814270 /* TootFromSiri */;
 			targetProxy = 521E8B6A21560FF900814270 /* PBXContainerItemProxy */;
 		};
-		52237A20217311C3003DFCA9 /* PBXTargetDependency */ = {
+		523CEA71217AB6F7004E18DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 52237A07217311C3003DFCA9 /* TootTest */;
-			targetProxy = 52237A1F217311C3003DFCA9 /* PBXContainerItemProxy */;
+			target = 523CEA5A217AB6F6004E18DE /* TootTest */;
+			targetProxy = 523CEA70217AB6F7004E18DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -661,44 +667,42 @@
 			};
 			name = Release;
 		};
-		52237A26217311C3003DFCA9 /* Debug */ = {
+		523CEA77217AB6F7004E18DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WX5RLE299P;
-				INFOPLIST_FILE = TootIntent/Info.plist;
+				INFOPLIST_FILE = TootTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiri.TootIntent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiri.TootTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "TootTest/TootTest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		52237A27217311C3003DFCA9 /* Release */ = {
+		523CEA78217AB6F7004E18DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WX5RLE299P;
-				INFOPLIST_FILE = TootIntent/Info.plist;
+				INFOPLIST_FILE = TootTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiri.TootIntent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kibousoft.TootFromSiri.TootTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "TootTest/TootTest-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -714,7 +718,7 @@
 				521E8B7121560FF900814270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		521E8B7221560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiri" */ = {
 			isa = XCConfigurationList;
@@ -723,7 +727,7 @@
 				521E8B7421560FF900814270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		521E8B7521560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiriTests" */ = {
 			isa = XCConfigurationList;
@@ -732,7 +736,7 @@
 				521E8B7721560FF900814270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		521E8B7821560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiriUITests" */ = {
 			isa = XCConfigurationList;
@@ -741,16 +745,16 @@
 				521E8B7A21560FF900814270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		52237A25217311C3003DFCA9 /* Build configuration list for PBXNativeTarget "TootTest" */ = {
+		523CEA76217AB6F7004E18DE /* Build configuration list for PBXNativeTarget "TootTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52237A26217311C3003DFCA9 /* Debug */,
-				52237A27217311C3003DFCA9 /* Release */,
+				523CEA77217AB6F7004E18DE /* Debug */,
+				523CEA78217AB6F7004E18DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
