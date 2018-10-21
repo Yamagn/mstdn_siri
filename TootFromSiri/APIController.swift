@@ -1,8 +1,8 @@
 //
-//  TootIntentHandler.swift
-//  TootTest
+//  APIController.swift
+//  TootFromSiri
 //
-//  Created by ymgn on 2018/10/20.
+//  Created by ymgn on 2018/10/21.
 //  Copyright © 2018 ymgn. All rights reserved.
 //
 
@@ -30,69 +30,68 @@ class HttpClientImpl {
     }
 }
 
-class TootIntentHandler: NSObject ,TootIntentHandling {
-    func confirm(intent: TootIntent, completion: @escaping (TootIntentResponse) -> Void) {
-        let vc = ViewController()
-
+class APIController {
+    func regist(domain: String, responseJson: Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject>? {
+        let registUrl = URL(string: "https://" + domain + "/api/v1/apps")!
+        
         let registBody: [String: String] = ["client_name": "TootFromSiri", "redirect_uris": "urn:ietf:wg:oauth:2.0:oob", "scopes": "write"]
-
+        
         do {
-            let registUrl = URL(string: "https://" + domain + "/api/v1/apps")!
             var request: URLRequest = URLRequest(url: registUrl)
-
+            
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = try JSONSerialization.data(withJSONObject: registBody, options: .prettyPrinted)
-
+            
             let session = HttpClientImpl()
             var (data, _, _) = session.execute(request: request as URLRequest)
-            vc.responseJson = try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as! Dictionary<String, AnyObject>
+            return try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as? Dictionary<String, AnyObject>
         } catch {
-            print(error)
-            return;
+            
+            return nil
         }
+    }
+    
+    func loginAuth(domain: String, mail: String, pass: String, responseJson: Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject>? {
         let loginUrl = URL(string: "https://" + domain + "/oauth/token")!
-        if vc.responseJson["client_id"] == nil{
-            return
+        if responseJson["client_id"] == nil{
+            print("regist failed")
+            return nil
         }
-
-        let loginBody: [String: String] = ["scope": "write", "client_id": vc.responseJson["client_id"] as! String, "client_secret": vc.responseJson["client_secret"] as! String, "grant_type": "password", "username": mail, "password": pass]
-
+        
+        let loginBody: [String: String] = ["scope": "write", "client_id": responseJson["client_id"] as! String, "client_secret": responseJson["client_secret"] as! String, "grant_type": "password", "username": mail, "password": pass]
+        
         do {
             var request: URLRequest = URLRequest(url: loginUrl)
-
+            
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = try JSONSerialization.data(withJSONObject: loginBody, options: .prettyPrinted)
-
+            
             let session = HttpClientImpl()
             var (data, _, _) = session.execute(request: request as URLRequest)
-            vc.responseJson = try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as! Dictionary<String, AnyObject>
+            return try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as? Dictionary<String, AnyObject>
         } catch {
-            print(error)
-            return
+            return nil
         }
     }
-    func handle(intent: TootIntent, completion: @escaping (TootIntentResponse) -> Void) {
-        let vc = ViewController()
-        let tootUrl = URL(string: "https://" + "mstdn.maud.io" + "/api/v1/statuses")!
-
-        let tootBody: [String: String] = ["access_token": vc.responseJson["access_token"] as! String, "status": "Hello Mstdn", "visibility": "public"]
+    
+    func toot(domain: String, content: String, responseJson: Dictionary<String, AnyObject>?) -> Dictionary<String, AnyObject>? {
+        let tootUrl = URL(string: "https://" + domain + "/api/v1/statuses")!
+        
+        let tootBody: [String: String] = ["access_token": responseJson?["access_token"] as! String, "status": content, "visibility": "public"]
         do {
             var request: URLRequest = URLRequest(url: tootUrl)
-
+            
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = try JSONSerialization.data(withJSONObject: tootBody, options: .prettyPrinted)
-
+            
             let session = HttpClientImpl()
             let (data, _, _) = session.execute(request: request as URLRequest)
-            _ = try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as! Dictionary<String, AnyObject>
+            return try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as? Dictionary<String, AnyObject>
         } catch {
-            print(error)
-            return
+            return nil
         }
-        print("Success")
-        completion(TootIntentResponse.success(tootContent: "Hello Mstdn"))
     }
 }

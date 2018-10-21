@@ -17,14 +17,12 @@
 		<dict>
 			<key>INIntentCategory</key>
 			<string>generic</string>
-			<key>INIntentDescription</key>
-			<string>Speak to Toot</string>
 			<key>INIntentDescriptionID</key>
-			<string>lcB9K7</string>
+			<string>GS5bFK</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>INIntentName</key>
-			<string>Toot</string>
+			<string>Letstoot</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
 				<key></key>
@@ -34,13 +32,13 @@
 					<key>INIntentParameterCombinationSubtitle</key>
 					<string></string>
 					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>ru16Uk</string>
+					<string>BPm5VV</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Toot From Siri</string>
+					<string></string>
 					<key>INIntentParameterCombinationTitleID</key>
-					<string>Tu1nux</string>
+					<string>hYb2W7</string>
 				</dict>
 			</dict>
 			<key>INIntentParameters</key>
@@ -51,9 +49,9 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>I haven't finished toot.</string>
+						<string>failed toot...</string>
 						<key>INIntentResponseCodeFormatStringID</key>
-						<string>iVvrHd</string>
+						<string>sSa1G1</string>
 						<key>INIntentResponseCodeName</key>
 						<string>failure</string>
 						<key>INIntentResponseCodeSuccess</key>
@@ -61,9 +59,9 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>I've toot that ${tootContent}.</string>
+						<string>Let's Toot Content input Here. </string>
 						<key>INIntentResponseCodeFormatStringID</key>
-						<string>SGNlHg</string>
+						<string>EFiogS</string>
 						<key>INIntentResponseCodeName</key>
 						<string>success</string>
 						<key>INIntentResponseCodeSuccess</key>
@@ -71,33 +69,20 @@
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>INIntentResponseParameters</key>
-				<array>
-					<dict>
-						<key>INIntentResponseParameterDisplayPriority</key>
-						<integer>1</integer>
-						<key>INIntentResponseParameterName</key>
-						<string>tootContent</string>
-						<key>INIntentResponseParameterSupportsMultipleValues</key>
-						<false/>
-						<key>INIntentResponseParameterTag</key>
-						<integer>1</integer>
-						<key>INIntentResponseParameterType</key>
-						<string>String</string>
-					</dict>
-				</array>
+				<array/>
 			</dict>
 			<key>INIntentRestrictions</key>
 			<integer>0</integer>
 			<key>INIntentTitle</key>
-			<string>Toot</string>
+			<string>Lets TOOT!!!</string>
 			<key>INIntentTitleID</key>
-			<string>WTz5XO</string>
+			<string>96om27</string>
 			<key>INIntentType</key>
 			<string>Custom</string>
 			<key>INIntentUserConfirmationRequired</key>
-			<false/>
+			<true/>
 			<key>INIntentVerb</key>
 			<string>Do</string>
 		</dict>
