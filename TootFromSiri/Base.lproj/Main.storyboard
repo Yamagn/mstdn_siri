@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PVO-gE-S0O">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -97,17 +97,54 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="BOK-K1-AAo">
+                        <barButtonItem key="rightBarButtonItem" title="Siri" id="xeg-J1-k7u"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="Indicator" destination="5h0-mk-Hcw" id="WTU-mg-4C6"/>
                         <outlet property="TootContent" destination="eaQ-PV-0cp" id="1xc-bR-e5K"/>
                         <outlet property="domainText" destination="hyu-4o-D6c" id="YN3-KL-5e2"/>
                         <outlet property="mailText" destination="ncD-ih-ax0" id="hgu-0B-qCZ"/>
                         <outlet property="passText" destination="ZNB-u6-Co4" id="Tus-bG-aGf"/>
+                        <segue destination="ZPx-EA-fpN" kind="show" identifier="siriSetting" id="guF-le-1ia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-68" y="-31"/>
+            <point key="canvasLocation" x="871.20000000000005" y="-31.03448275862069"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Q8g-LF-sGz">
+            <objects>
+                <viewController id="ZPx-EA-fpN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g1T-vz-9Xd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ugz-96-Fxp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c6h-cQ-VGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691" y="-31"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gGg-1C-DJ2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PVO-gE-S0O" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pbV-Qc-iHa">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ASJ-Ke-mxf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TYM-Su-WHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-68" y="-31.03448275862069"/>
         </scene>
     </scenes>
 </document>

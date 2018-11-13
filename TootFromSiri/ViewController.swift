@@ -85,10 +85,11 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func donateInteraction() {
+    func donateInteraction(content: String) {
         let intent = LetstootIntent()
 
         intent.suggestedInvocationPhrase = "トゥート"
+        intent.content = content
 
         let interaction = INInteraction(intent: intent, response: nil)
         interaction.donate{ (error) in
@@ -107,7 +108,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.Indicator.hidesWhenStopped = true
-        donateInteraction()
+        donateInteraction(content: "おはようございます")
     }
 }
 

@@ -7,25 +7,25 @@
 	<key>INIntentDefinitionModelVersion</key>
 	<string>1.0</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>18A391</string>
+	<string>18B75</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>10A255</string>
+	<string>10B61</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>10.0</string>
+	<string>10.1</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
 			<key>INIntentCategory</key>
-			<string>generic</string>
+			<string>share</string>
 			<key>INIntentDescriptionID</key>
 			<string>GS5bFK</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>0</integer>
+			<integer>5</integer>
 			<key>INIntentName</key>
 			<string>Letstoot</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key></key>
+				<key>content</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
@@ -36,13 +36,26 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string></string>
+					<string>toot with ${content}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>hYb2W7</string>
 				</dict>
 			</dict>
 			<key>INIntentParameters</key>
-			<array/>
+			<array>
+				<dict>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>1</integer>
+					<key>INIntentParameterName</key>
+					<string>content</string>
+					<key>INIntentParameterSupportsMultipleValues</key>
+					<false/>
+					<key>INIntentParameterTag</key>
+					<integer>5</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+			</array>
 			<key>INIntentResponse</key>
 			<dict>
 				<key>INIntentResponseCodes</key>
@@ -59,7 +72,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Let's Toot Content input Here. </string>
+						<string>Hello</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>EFiogS</string>
 						<key>INIntentResponseCodeName</key>
@@ -69,7 +82,7 @@
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>2</integer>
+				<integer>3</integer>
 				<key>INIntentResponseParameters</key>
 				<array/>
 			</dict>
@@ -82,9 +95,9 @@
 			<key>INIntentType</key>
 			<string>Custom</string>
 			<key>INIntentUserConfirmationRequired</key>
-			<true/>
+			<false/>
 			<key>INIntentVerb</key>
-			<string>Do</string>
+			<string>Post</string>
 		</dict>
 	</array>
 </dict>
