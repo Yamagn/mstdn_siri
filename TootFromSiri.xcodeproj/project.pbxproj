@@ -20,6 +20,9 @@
 		523CEA7B217AB7F9004E18DE /* Toot.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52237A012172F054003DFCA9 /* Toot.intentdefinition */; };
 		523CEA7D217AC00E004E18DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B4F21560FF700814270 /* ViewController.swift */; };
 		523CEA80217AFC94004E18DE /* LetstootIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CEA7F217AFC94004E18DE /* LetstootIntentHandler.swift */; };
+		524CAD13219D5B4A0014980B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CAD12219D5B4A0014980B /* SettingViewController.swift */; };
+		524CAD14219D5B4A0014980B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CAD12219D5B4A0014980B /* SettingViewController.swift */; };
+		524CAD18219D8B080014980B /* LetstootIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CEA7F217AFC94004E18DE /* LetstootIntentHandler.swift */; };
 		5298906D217C179B00E00C6D /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298906C217C179B00E00C6D /* APIController.swift */; };
 		5298906E217C179B00E00C6D /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298906C217C179B00E00C6D /* APIController.swift */; };
 		52989074217C31B900E00C6D /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52237A13217311C3003DFCA9 /* IntentsUI.framework */; };
@@ -101,6 +104,7 @@
 		523CEA5F217AB6F6004E18DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523CEA79217AB74C004E18DE /* IntentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		523CEA7F217AFC94004E18DE /* LetstootIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetstootIntentHandler.swift; sourceTree = "<group>"; };
+		524CAD12219D5B4A0014980B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5298906C217C179B00E00C6D /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		52989073217C31B900E00C6D /* TootTestUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TootTestUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		52989076217C31B900E00C6D /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				521E8B5621560FF800814270 /* LaunchScreen.storyboard */,
 				521E8B5921560FF800814270 /* Info.plist */,
 				5298906C217C179B00E00C6D /* APIController.swift */,
+				524CAD12219D5B4A0014980B /* SettingViewController.swift */,
 			);
 			path = TootFromSiri;
 			sourceTree = "<group>";
@@ -432,6 +437,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524CAD18219D8B080014980B /* LetstootIntentHandler.swift in Sources */,
+				524CAD13219D5B4A0014980B /* SettingViewController.swift in Sources */,
 				5298906D217C179B00E00C6D /* APIController.swift in Sources */,
 				52237A022172F054003DFCA9 /* Toot.intentdefinition in Sources */,
 				521E8B5021560FF700814270 /* ViewController.swift in Sources */,
@@ -464,6 +471,7 @@
 				52989087217C42C300E00C6D /* IntentViewController.swift in Sources */,
 				523CEA7B217AB7F9004E18DE /* Toot.intentdefinition in Sources */,
 				523CEA7A217AB74C004E18DE /* IntentHandler.swift in Sources */,
+				524CAD14219D5B4A0014980B /* SettingViewController.swift in Sources */,
 				5298906E217C179B00E00C6D /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

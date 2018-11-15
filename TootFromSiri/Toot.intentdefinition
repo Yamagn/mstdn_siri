@@ -72,7 +72,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Hello</string>
+						<string>成功しました </string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>EFiogS</string>
 						<key>INIntentResponseCodeName</key>

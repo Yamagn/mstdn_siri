@@ -98,7 +98,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="BOK-K1-AAo">
-                        <barButtonItem key="rightBarButtonItem" title="Siri" id="xeg-J1-k7u"/>
+                        <barButtonItem key="rightBarButtonItem" title="Siri" id="xeg-J1-k7u">
+                            <connections>
+                                <action selector="siriSettingButton:" destination="BYZ-38-t0r" id="Nhz-do-bHH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="Indicator" destination="5h0-mk-Hcw" id="WTU-mg-4C6"/>
@@ -113,20 +117,48 @@
             </objects>
             <point key="canvasLocation" x="871.20000000000005" y="-31.03448275862069"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="Q8g-LF-sGz">
             <objects>
-                <viewController id="ZPx-EA-fpN" sceneMemberID="viewController">
+                <viewController id="ZPx-EA-fpN" customClass="SettingViewController" customModule="TootFromSiri" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g1T-vz-9Xd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="なにをする？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spx-Cd-PKK">
+                                <rect key="frame" x="97" y="164" width="181" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Siriでトゥートする内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6A-lI-TaO">
+                                <rect key="frame" x="97" y="93" width="181" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwM-hP-SUP">
+                                <rect key="frame" x="149" y="229" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="内容を設定"/>
+                                <connections>
+                                    <action selector="settingClicked:" destination="ZPx-EA-fpN" eventType="touchUpInside" id="Zvc-vd-kIe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ugz-96-Fxp"/>
                     </view>
+                    <connections>
+                        <outlet property="contentText" destination="spx-Cd-PKK" id="Rcx-GW-9Dy"/>
+                        <outlet property="settingView" destination="g1T-vz-9Xd" id="bCU-Wa-OQv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6h-cQ-VGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691" y="-31"/>
+            <point key="canvasLocation" x="1690.4000000000001" y="-31.03448275862069"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gGg-1C-DJ2">

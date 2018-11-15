@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mailText: UITextField!
     @IBOutlet weak var passText: UITextField!
     
+    var tootContent: String? = nil;
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -85,6 +87,10 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func siriSettingButton(_ sender: Any) {
+        performSegue(withIdentifier: "siriSetting", sender: nil)
+    }
+    
     func donateInteraction(content: String) {
         let intent = LetstootIntent()
 
@@ -108,7 +114,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.Indicator.hidesWhenStopped = true
-        donateInteraction(content: "おはようございます")
+        donateInteraction(content: tootContent ?? "")
     }
 }
 
