@@ -12,6 +12,10 @@ class LetstootIntentHandler: NSObject ,LetstootIntentHandling {
     let api = APIController()
     var responseJson = Dictionary<String, AnyObject>()
     
+    let domain = "mstdn.maud.io"
+    let mail = "syankenpon@gmail.com"
+    let pass = "Tonarino10106"
+    
     func handle(intent: LetstootIntent, completion: @escaping (LetstootIntentResponse) -> Void) {
         guard let content = intent.content else {
             completion(LetstootIntentResponse(code: .failure, userActivity: nil))

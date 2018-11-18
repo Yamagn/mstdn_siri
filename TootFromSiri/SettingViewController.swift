@@ -15,12 +15,10 @@ class SettingViewController: UIViewController{
     @IBOutlet weak var contentText: UITextField!
     @IBOutlet var settingView: UIView!
     
-    let intent = LetstootIntent()
+    private var intent = LetstootIntent()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureView()
         // Do any additional setup after loading the view.
     }
     
@@ -37,22 +35,15 @@ class SettingViewController: UIViewController{
     
     @IBAction func settingClicked(_ sender: Any) {
         if let content = contentText.text {
-            
+            intent.content = content
+            configureView()
+        } else {
+            let controller = UIAlertController(title: nil, message: "内容を入力してください", preferredStyle: UIAlertController.Style.alert)
+            controller.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+            self.present(controller, animated: true, completion: nil)
+            return
         }
-        
-        
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension SettingViewController: INUIAddVoiceShortcutButtonDelegate {
