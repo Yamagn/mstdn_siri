@@ -16,16 +16,26 @@ import Intents
 // You can test this example integration by saying things to Siri like:
 // "Send a message using <myApp>"
 
-class IntentViewController: UIViewController, INUIHostedViewControlling {
+class IntentViewController: UIViewController, INUIHostedViewControlling, UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return responseJson.count
+    }
     
-    @IBOutlet weak var domainText: UITextField!
-    @IBOutlet weak var mailText: UITextField!
-    @IBOutlet weak var passText: UITextField!
-    @IBOutlet weak var contentText: UITextField!
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: TootCell = tableView.dequeueReusableCell(withIdentifier: "TootCell", for: indexPath) as! TootCell
+    }
     
+    var responseJson = Dictionary<String, AnyObject>()
+    @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let nib = UINib(nibName: "TootCell", bundle: nil)
+        
+        tableView.register(nib, forCellReuseIdentifier: "TootCell")
     }
         
     // MARK: - INUIHostedViewControlling
@@ -33,38 +43,23 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
     // Prepare your view controller for the interaction to handle.
     func configureView(for parameters: Set<INParameter>, of interaction: INInteraction, interactiveBehavior: INUIInteractiveBehavior, context: INUIHostedViewContext, completion: @escaping (Bool, Set<INParameter>, CGSize) -> Void) {
         // Do configuration here, including preparing views and calculating a desired size for presentation.
-        guard interaction.intent is LetstootIntent else {
+        guard interaction.intent is TimelineIntent else {
             completion(false, Set(), .zero)
             return
         }
+        
+        let api = APIController()
+        let domain = "mstdn.maud.io"
+        let mail = "syankenpon@gmail.com"
+        let pass = "Tonarino10106"
+        responseJson = api.regist(domain: domain, responseJson: responseJson)!
+        responseJson = api.loginAuth(domain: domain, mail: mail, pass: pass, responseJson: responseJson)!
+        responseJson = api.getTl(domain: domain, responseJson: responseJson)!
         
         if interaction.intentHandlingStatus == .ready {
         }
         else if interaction.intentHandlingStatus == .success {
             completion(true, parameters, self.desiredSize)
-        }
-    }
-    
-    @IBAction func tootButton(_ sender: Any) {
-        let vc = ViewController()
-        let api = APIController()
-        var responseJson = vc.responseJson
-        
-        if domainText.text == nil || mailText.text == nil || passText == nil{
-            print("入力エラー")
-            return
-        }
-        
-        
-        print("Debug")
-        responseJson = api.regist(domain: domainText.text!, responseJson: responseJson)!
-        if responseJson["client_id"] != nil {
-            responseJson = api.loginAuth(domain: domainText.text!, mail: mailText.text!, pass: passText.text!, responseJson: responseJson)!
-        } else {
-            print("not response")
-        }
-        if responseJson["access_token"] != nil {
-            responseJson = api.toot(domain: domainText.text!, content: contentText.text!, responseJson: responseJson)!
         }
     }
     

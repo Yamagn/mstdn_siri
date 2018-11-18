@@ -94,4 +94,22 @@ class APIController {
             return nil
         }
     }
+    
+    func getTl(domain: String, responseJson: Dictionary<String, AnyObject>?) -> Dictionary<String, AnyObject>? {
+        let getTlUrl = URL(string: "https://" + domain + "/api/v1/timelines/home")!
+        do {
+            var request: URLRequest = URLRequest(url: getTlUrl)
+            guard let accessToken = responseJson?["access_token"] else {
+                return nil
+            }
+            
+            request.httpMethod = "GET"
+            request.setValue("Bearer " + (accessToken as! String), forHTTPHeaderField: "Authorization")
+            let session = HttpClientImpl()
+            let (data, _, _) = session.execute(request: request as URLRequest)
+            return try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as? Dictionary<String, AnyObject>
+        } catch {
+            return nil
+        }
+    }
 }

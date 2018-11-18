@@ -91,11 +91,10 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "siriSetting", sender: nil)
     }
     
-    func donateInteraction(content: String) {
-        let intent = LetstootIntent()
+    func donateInteraction() {
+        let intent = TimelineIntent()
 
-        intent.suggestedInvocationPhrase = "トゥート"
-        intent.content = content
+        intent.suggestedInvocationPhrase = "タイムラインを取得"
 
         let interaction = INInteraction(intent: intent, response: nil)
         interaction.donate{ (error) in
@@ -114,7 +113,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.Indicator.hidesWhenStopped = true
-        donateInteraction(content: tootContent ?? "")
+        donateInteraction()
     }
 }
 

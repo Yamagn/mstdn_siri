@@ -28,6 +28,7 @@
 			<array>
 				<string>INSendMessageIntent</string>
 				<string>LetstootIntent</string>
+				<string>TimelineIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>

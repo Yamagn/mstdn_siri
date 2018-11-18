@@ -13,25 +13,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        guard userActivity.interaction?.intent is LetstootIntent,
+        guard userActivity.interaction?.intent is TimelineIntent,
                 let window = window,
                 let rootViewController = window.rootViewController as? UINavigationController
             else {
                 return false
         }
-        
+
         if rootViewController.viewControllers.count > 1 && rootViewController.viewControllers.last is ViewController {
             return false
         }
-        
+
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "viewController") as! ViewController
         rootViewController.pushViewController(vc, animated: true)
-        // Override point for customization after application launch.
         return true
     }
 

@@ -30,13 +30,13 @@
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
 					<key>INIntentParameterCombinationSubtitle</key>
-					<string></string>
+					<string>${content}とトゥートします</string>
 					<key>INIntentParameterCombinationSubtitleID</key>
 					<string>BPm5VV</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>toot with ${content}</string>
+					<string>${content}をトゥート</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>hYb2W7</string>
 				</dict>
@@ -72,7 +72,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>成功しました </string>
+						<string>sucess toot</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>EFiogS</string>
 						<key>INIntentResponseCodeName</key>
@@ -98,6 +98,80 @@
 			<false/>
 			<key>INIntentVerb</key>
 			<string>Post</string>
+		</dict>
+		<dict>
+			<key>INIntentCategory</key>
+			<string>information</string>
+			<key>INIntentDescription</key>
+			<string>ホームタイムラインの取得</string>
+			<key>INIntentDescriptionID</key>
+			<string>OHzUVG</string>
+			<key>INIntentLastParameterTag</key>
+			<integer>0</integer>
+			<key>INIntentName</key>
+			<string>Timeline</string>
+			<key>INIntentParameterCombinations</key>
+			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string>タイムラインを表示します</string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>Wai5HN</string>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>タイムラインを表示</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>uLymdL</string>
+				</dict>
+			</dict>
+			<key>INIntentParameters</key>
+			<array/>
+			<key>INIntentResponse</key>
+			<dict>
+				<key>INIntentResponseCodes</key>
+				<array>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>failure get timeline.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>q8tVzx</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failure</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>success get timeline.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>LtQ5VU</string>
+						<key>INIntentResponseCodeName</key>
+						<string>success</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
+					</dict>
+				</array>
+				<key>INIntentResponseLastParameterTag</key>
+				<integer>0</integer>
+				<key>INIntentResponseParameters</key>
+				<array/>
+			</dict>
+			<key>INIntentRestrictions</key>
+			<integer>0</integer>
+			<key>INIntentTitle</key>
+			<string>get Timeline</string>
+			<key>INIntentTitleID</key>
+			<string>SbxqFp</string>
+			<key>INIntentType</key>
+			<string>Custom</string>
+			<key>INIntentUserConfirmationRequired</key>
+			<false/>
+			<key>INIntentVerb</key>
+			<string>View</string>
 		</dict>
 	</array>
 </dict>

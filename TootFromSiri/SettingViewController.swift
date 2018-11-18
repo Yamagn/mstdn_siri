@@ -24,18 +24,26 @@ class SettingViewController: UIViewController{
     
     private func configureView() {
         let addShortcutButton = INUIAddVoiceShortcutButton(style: .black)
-        addShortcutButton.shortcut = INShortcut(intent: intent)
-        addShortcutButton.delegate = self
-        
         addShortcutButton.translatesAutoresizingMaskIntoConstraints = false
         settingView.addSubview(addShortcutButton)
         settingView.centerXAnchor.constraint(equalTo: addShortcutButton.centerXAnchor).isActive = true
         settingView.centerYAnchor.constraint(equalTo: addShortcutButton.centerYAnchor).isActive = true
+        addShortcutButton.addTarget(self, action: #selector(addToSiri(_:)), for: .touchUpInside)
+    }
+    
+    @objc
+    func addToSiri(_ sender: Any) {
+        if let shortcut = INShortcut(intent: intent) {
+            let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
+            viewController.modalPresentationStyle = .formSheet
+            viewController.delegate = self
+            present(viewController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func settingClicked(_ sender: Any) {
-        if let content = contentText.text {
-            intent.content = content
+        if !contentText.text!.isEmpty{
+            intent.content = contentText.text
             configureView()
         } else {
             let controller = UIAlertController(title: nil, message: "内容を入力してください", preferredStyle: UIAlertController.Style.alert)

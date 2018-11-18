@@ -31,6 +31,7 @@
 			<key>IntentsSupported</key>
 			<array>
 				<string>LetstootIntent</string>
+				<string>TimelineIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
