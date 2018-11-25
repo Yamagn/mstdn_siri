@@ -9,9 +9,11 @@
 import UIKit
 
 class TootCell: UITableViewCell {
-    @IBOutlet weak var userIcon: UIImageView!
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userID: UILabel!
     @IBOutlet weak var tootContent: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,4 +26,17 @@ class TootCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+extension UIImageView {
+    public func setImage(fromUrl: URL) {
+        URLSession.shared.dataTask(with: fromUrl) { (data, _, _) in
+            guard let data = data else {
+                return
+            }
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data)
+            }
+        }
+    }
 }

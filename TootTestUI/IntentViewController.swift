@@ -17,55 +17,56 @@ import Intents
 // "Send a message using <myApp>"
 
 class IntentViewController: UIViewController, INUIHostedViewControlling, UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return responseJson.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: TootCell = tableView.dequeueReusableCell(withIdentifier: "TootCell", for: indexPath) as! TootCell
-    }
-    
-    var responseJson = Dictionary<String, AnyObject>()
     @IBOutlet var tableView: UITableView!
+    var dataList:[Toots] = []
+    var responseJson = Dictionary<String, AnyObject>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         let nib = UINib(nibName: "TootCell", bundle: nil)
         
         tableView.register(nib, forCellReuseIdentifier: "TootCell")
+        reloadListDatas()
     }
-        
-    // MARK: - INUIHostedViewControlling
     
-    // Prepare your view controller for the interaction to handle.
     func configureView(for parameters: Set<INParameter>, of interaction: INInteraction, interactiveBehavior: INUIInteractiveBehavior, context: INUIHostedViewContext, completion: @escaping (Bool, Set<INParameter>, CGSize) -> Void) {
-        // Do configuration here, including preparing views and calculating a desired size for presentation.
-        guard interaction.intent is TimelineIntent else {
-            completion(false, Set(), .zero)
-            return
-        }
-        
-        let api = APIController()
-        let domain = "mstdn.maud.io"
-        let mail = "syankenpon@gmail.com"
-        let pass = "Tonarino10106"
-        responseJson = api.regist(domain: domain, responseJson: responseJson)!
-        responseJson = api.loginAuth(domain: domain, mail: mail, pass: pass, responseJson: responseJson)!
-        responseJson = api.getTl(domain: domain, responseJson: responseJson)!
-        
-        if interaction.intentHandlingStatus == .ready {
-        }
-        else if interaction.intentHandlingStatus == .success {
-            completion(true, parameters, self.desiredSize)
-        }
+        completion(true, parameters, self.desiredSize)
     }
-    
     
     var desiredSize: CGSize {
         return self.extensionContext!.hostedViewMaximumAllowedSize
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: TootCell = tableView.dequeueReusableCell(withIdentifier: "TootCell", for: indexPath) as! TootCell
+        
+        let data = dataList[indexPath.row]
+        cell.tootContent.text = data.content
+        cell.userID.text = data.account.username
+        cell.userName.text = data.account.display_name
+        cell.userImage.setImage(fromUrl: data.account.avatar)
+        return cell
+    }
+    
+    func reloadListDatas() {
+        let domain = "mstdn.maud.io"
+        let mail = "syankenpon@gmail.com"
+        let pass = "Tonarino10106"
+        let api = APIController()
+
+        responseJson = api.regist(domain: domain, responseJson: responseJson)!
+        responseJson = api.loginAuth(domain: domain, mail: mail, pass: pass, responseJson: responseJson)!
+        dataList = api.getTl(domain: domain, responseJson: responseJson)
+
+        self.tableView.reloadData()
+    }
 }

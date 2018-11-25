@@ -20,9 +20,12 @@
 		523CEA7B217AB7F9004E18DE /* Toot.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 52237A012172F054003DFCA9 /* Toot.intentdefinition */; };
 		523CEA7D217AC00E004E18DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B4F21560FF700814270 /* ViewController.swift */; };
 		523CEA80217AFC94004E18DE /* LetstootIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CEA7F217AFC94004E18DE /* LetstootIntentHandler.swift */; };
+		5243BA2521AA3B330064057C /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52989076217C31B900E00C6D /* IntentViewController.swift */; };
 		524CAD13219D5B4A0014980B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CAD12219D5B4A0014980B /* SettingViewController.swift */; };
 		524CAD14219D5B4A0014980B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CAD12219D5B4A0014980B /* SettingViewController.swift */; };
 		524CAD18219D8B080014980B /* LetstootIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CEA7F217AFC94004E18DE /* LetstootIntentHandler.swift */; };
+		52598D7021AA453000CE97CB /* TootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E598BB21A13407001D89CA /* TootCell.swift */; };
+		52598D7121AA453100CE97CB /* TootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E598BB21A13407001D89CA /* TootCell.swift */; };
 		5298906D217C179B00E00C6D /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298906C217C179B00E00C6D /* APIController.swift */; };
 		5298906E217C179B00E00C6D /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298906C217C179B00E00C6D /* APIController.swift */; };
 		52989074217C31B900E00C6D /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52237A13217311C3003DFCA9 /* IntentsUI.framework */; };
@@ -451,10 +454,12 @@
 			files = (
 				524CAD18219D8B080014980B /* LetstootIntentHandler.swift in Sources */,
 				524CAD13219D5B4A0014980B /* SettingViewController.swift in Sources */,
+				52598D7121AA453100CE97CB /* TootCell.swift in Sources */,
 				5298906D217C179B00E00C6D /* APIController.swift in Sources */,
 				52E598B821A12FA8001D89CA /* TimelineIntentHandler.swift in Sources */,
 				52237A022172F054003DFCA9 /* Toot.intentdefinition in Sources */,
 				521E8B5021560FF700814270 /* ViewController.swift in Sources */,
+				5243BA2521AA3B330064057C /* IntentViewController.swift in Sources */,
 				521E8B4E21560FF700814270 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +486,7 @@
 			files = (
 				523CEA80217AFC94004E18DE /* LetstootIntentHandler.swift in Sources */,
 				523CEA7D217AC00E004E18DE /* ViewController.swift in Sources */,
+				52598D7021AA453000CE97CB /* TootCell.swift in Sources */,
 				52989087217C42C300E00C6D /* IntentViewController.swift in Sources */,
 				523CEA7B217AB7F9004E18DE /* Toot.intentdefinition in Sources */,
 				523CEA7A217AB74C004E18DE /* IntentHandler.swift in Sources */,

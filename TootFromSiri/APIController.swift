@@ -30,11 +30,22 @@ class HttpClientImpl {
     }
 }
 
+struct Toots: Codable {
+    let content: String
+    let account: Account
+}
+
+struct Account: Codable {
+    let avatar: URL
+    let username: String
+    let display_name: String
+}
+
 class APIController {
     func regist(domain: String, responseJson: Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject>? {
         let registUrl = URL(string: "https://" + domain + "/api/v1/apps")!
         
-        let registBody: [String: String] = ["client_name": "TootFromSiri", "redirect_uris": "urn:ietf:wg:oauth:2.0:oob", "scopes": "write"]
+        let registBody: [String: String] = ["client_name": "TootFromSiri", "redirect_uris": "urn:ietf:wg:oauth:2.0:oob", "scopes": "write read"]
         
         do {
             var request: URLRequest = URLRequest(url: registUrl)
@@ -59,7 +70,7 @@ class APIController {
             return nil
         }
         
-        let loginBody: [String: String] = ["scope": "write", "client_id": responseJson["client_id"] as! String, "client_secret": responseJson["client_secret"] as! String, "grant_type": "password", "username": mail, "password": pass]
+        let loginBody: [String: String] = ["scope": "write read", "client_id": responseJson["client_id"] as! String, "client_secret": responseJson["client_secret"] as! String, "grant_type": "password", "username": mail, "password": pass]
         
         do {
             var request: URLRequest = URLRequest(url: loginUrl)
@@ -95,21 +106,21 @@ class APIController {
         }
     }
     
-    func getTl(domain: String, responseJson: Dictionary<String, AnyObject>?) -> Dictionary<String, AnyObject>? {
+    func getTl(domain: String, responseJson: Dictionary<String, AnyObject>?) -> [Toots] {
         let getTlUrl = URL(string: "https://" + domain + "/api/v1/timelines/home")!
-        do {
-            var request: URLRequest = URLRequest(url: getTlUrl)
-            guard let accessToken = responseJson?["access_token"] else {
-                return nil
-            }
-            
-            request.httpMethod = "GET"
-            request.setValue("Bearer " + (accessToken as! String), forHTTPHeaderField: "Authorization")
-            let session = HttpClientImpl()
-            let (data, _, _) = session.execute(request: request as URLRequest)
-            return try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as? Dictionary<String, AnyObject>
-        } catch {
-            return nil
+        var request: URLRequest = URLRequest(url: getTlUrl)
+        guard let accessToken = responseJson?["access_token"] else {
+            return []
         }
+        
+        request.httpMethod = "GET"
+        request.setValue("Bearer " + (accessToken as! String), forHTTPHeaderField: "Authorization")
+        let session = HttpClientImpl()
+        let (data, _, _) = session.execute(request: request as URLRequest)
+        guard let jsonData: NSData = data else {
+            return []
+        }
+        print(jsonData)
+        return try! JSONDecoder().decode([Toots].self, from: jsonData as Data)
     }
 }
