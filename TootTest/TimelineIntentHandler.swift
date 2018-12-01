@@ -7,13 +7,16 @@
 //
 
 import Foundation
-import os.log
+import Intents
 
 class TimelineIntentHandler: NSObject, TimelineIntentHandling {
     let api = APIController()
     var responseJson = Dictionary<String, AnyObject>()
+    var dataList:[Toots] = []
     
-    func handle(intent: TimelineIntent, completion: @escaping (TimelineIntentResponse) -> Void) {
-        completion(TimelineIntentResponse(code: .success, userActivity: nil))
+    public func handle(intent: TimelineIntent, completion: @escaping (TimelineIntentResponse) -> Void) {
+        let response = TimelineIntentResponse(code: .success, userActivity: nil)
+        response.dataList = dataList as! [INObject]
+        completion(response)
     }
 }

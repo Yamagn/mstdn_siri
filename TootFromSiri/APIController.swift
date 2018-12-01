@@ -107,7 +107,7 @@ class APIController {
     }
     
     func getTl(domain: String, responseJson: Dictionary<String, AnyObject>?) -> [Toots] {
-        let getTlUrl = URL(string: "https://" + domain + "/api/v1/timelines/home")!
+        let getTlUrl = URL(string: "https://" + domain + "/api/v1/timelines/public")!
         var request: URLRequest = URLRequest(url: getTlUrl)
         guard let accessToken = responseJson?["access_token"] else {
             return []

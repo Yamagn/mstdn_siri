@@ -21,22 +21,7 @@ class TootCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
-}
-
-extension UIImageView {
-    public func setImage(fromUrl: URL) {
-        URLSession.shared.dataTask(with: fromUrl) { (data, _, _) in
-            guard let data = data else {
-                return
-            }
-            DispatchQueue.main.async {
-                self.image = UIImage(data: data)
-            }
-        }
-    }
 }

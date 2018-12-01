@@ -26,6 +26,9 @@
 		524CAD18219D8B080014980B /* LetstootIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CEA7F217AFC94004E18DE /* LetstootIntentHandler.swift */; };
 		52598D7021AA453000CE97CB /* TootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E598BB21A13407001D89CA /* TootCell.swift */; };
 		52598D7121AA453100CE97CB /* TootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E598BB21A13407001D89CA /* TootCell.swift */; };
+		528A85CE21B2367800CB0734 /* ParseHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A85CD21B2367800CB0734 /* ParseHTML.swift */; };
+		528A85CF21B2367800CB0734 /* ParseHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A85CD21B2367800CB0734 /* ParseHTML.swift */; };
+		528A85D021B2367800CB0734 /* ParseHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A85CD21B2367800CB0734 /* ParseHTML.swift */; };
 		5298906D217C179B00E00C6D /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298906C217C179B00E00C6D /* APIController.swift */; };
 		5298906E217C179B00E00C6D /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298906C217C179B00E00C6D /* APIController.swift */; };
 		52989074217C31B900E00C6D /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52237A13217311C3003DFCA9 /* IntentsUI.framework */; };
@@ -113,6 +116,7 @@
 		523CEA79217AB74C004E18DE /* IntentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		523CEA7F217AFC94004E18DE /* LetstootIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetstootIntentHandler.swift; sourceTree = "<group>"; };
 		524CAD12219D5B4A0014980B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		528A85CD21B2367800CB0734 /* ParseHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseHTML.swift; sourceTree = "<group>"; };
 		5298906C217C179B00E00C6D /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		52989073217C31B900E00C6D /* TootTestUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TootTestUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		52989076217C31B900E00C6D /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 				521E8B5921560FF800814270 /* Info.plist */,
 				5298906C217C179B00E00C6D /* APIController.swift */,
 				524CAD12219D5B4A0014980B /* SettingViewController.swift */,
+				528A85CD21B2367800CB0734 /* ParseHTML.swift */,
 			);
 			path = TootFromSiri;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 			files = (
 				524CAD18219D8B080014980B /* LetstootIntentHandler.swift in Sources */,
 				524CAD13219D5B4A0014980B /* SettingViewController.swift in Sources */,
+				528A85CE21B2367800CB0734 /* ParseHTML.swift in Sources */,
 				52598D7121AA453100CE97CB /* TootCell.swift in Sources */,
 				5298906D217C179B00E00C6D /* APIController.swift in Sources */,
 				52E598B821A12FA8001D89CA /* TimelineIntentHandler.swift in Sources */,
@@ -486,6 +492,7 @@
 			files = (
 				523CEA80217AFC94004E18DE /* LetstootIntentHandler.swift in Sources */,
 				523CEA7D217AC00E004E18DE /* ViewController.swift in Sources */,
+				528A85CF21B2367800CB0734 /* ParseHTML.swift in Sources */,
 				52598D7021AA453000CE97CB /* TootCell.swift in Sources */,
 				52989087217C42C300E00C6D /* IntentViewController.swift in Sources */,
 				523CEA7B217AB7F9004E18DE /* Toot.intentdefinition in Sources */,
@@ -505,6 +512,7 @@
 				52989082217C3A9600E00C6D /* IntentHandler.swift in Sources */,
 				52E598B721A12FA7001D89CA /* TimelineIntentHandler.swift in Sources */,
 				52989083217C3A9A00E00C6D /* LetstootIntentHandler.swift in Sources */,
+				528A85D021B2367800CB0734 /* ParseHTML.swift in Sources */,
 				52989077217C31B900E00C6D /* IntentViewController.swift in Sources */,
 				52989085217C3AA100E00C6D /* APIController.swift in Sources */,
 				52E598BD21A13407001D89CA /* TootCell.swift in Sources */,

@@ -12,19 +12,19 @@
         <scene sceneID="7MM-of-jgj">
             <objects>
                 <viewController id="ObA-dk-sSI" customClass="IntentViewController" customModule="TootTestUI" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NSb-3C-mzQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OWq-1P-u0i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
-                            <outlet property="dataSource" destination="ObA-dk-sSI" id="lra-w6-X79"/>
-                            <outlet property="delegate" destination="ObA-dk-sSI" id="HcK-0u-yPf"/>
+                            <outlet property="dataSource" destination="ObA-dk-sSI" id="4X0-nR-dC3"/>
+                            <outlet property="delegate" destination="ObA-dk-sSI" id="ZVF-gt-bFj"/>
                         </connections>
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="150"/>
                     <connections>
-                        <outlet property="tableView" destination="NSb-3C-mzQ" id="S8J-5B-yVJ"/>
+                        <outlet property="tableView" destination="OWq-1P-u0i" id="aRg-2g-DSk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -156,9 +156,22 @@
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>0</integer>
+				<integer>13</integer>
 				<key>INIntentResponseParameters</key>
-				<array/>
+				<array>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>1</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>dataList</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<true/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>13</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>Object</string>
+					</dict>
+				</array>
 			</dict>
 			<key>INIntentRestrictions</key>
 			<integer>0</integer>
