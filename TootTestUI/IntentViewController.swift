@@ -55,9 +55,9 @@ class IntentViewController: UIViewController, INUIHostedViewControlling, UITable
         let cell: TootCell = tableView.dequeueReusableCell(withIdentifier: "TootCell", for: indexPath) as! TootCell
 
         let data = dataList[indexPath.row]
-        let attributedString = NSAttributedString.parseHTML2Text(sourceText: data.content)
-        cell.tootContent.attributedText = attributedString
-//        cell.tootContent.text = data.content
+//        let attributedString = NSAttributedString.parseHTML2Text(sourceText: data.content)
+//        cell.tootContent.attributedText = attributedString
+        cell.tootContent.text = data.content
         cell.userID.text = "@" + data.account.username
         cell.userName.text = data.account.display_name
         cell.userImage.setImage(fromUrl: data.account.avatar)
