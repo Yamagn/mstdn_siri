@@ -56,6 +56,9 @@ class APIController {
             
             let session = HttpClientImpl()
             var (data, _, _) = session.execute(request: request as URLRequest)
+            if data == nil {
+                return nil
+            }
             return try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as? Dictionary<String, AnyObject>
         } catch {
             
@@ -115,6 +118,20 @@ class APIController {
         
         request.httpMethod = "GET"
         request.setValue("Bearer " + (accessToken as! String), forHTTPHeaderField: "Authorization")
+        let session = HttpClientImpl()
+        let (data, _, _) = session.execute(request: request as URLRequest)
+        guard let jsonData: NSData = data else {
+            return []
+        }
+        return try! JSONDecoder().decode([Toots].self, from: jsonData as Data)
+    }
+    
+    func getTlWithToken(domain: String, access_token: String) -> [Toots] {
+        let getTlUrl = URL(string: "https://" + domain + "/api/v1/timelines/home?limit=10")!
+        var request: URLRequest = URLRequest(url: getTlUrl)
+        
+        request.httpMethod = "GET"
+        request.setValue("Bearer " + access_token, forHTTPHeaderField: "Authorization")
         let session = HttpClientImpl()
         let (data, _, _) = session.execute(request: request as URLRequest)
         guard let jsonData: NSData = data else {

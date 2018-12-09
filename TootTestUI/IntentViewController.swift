@@ -8,6 +8,7 @@
 
 import IntentsUI
 import Intents
+import RealmSwift
 
 // As an example, this extension's Info.plist has been configured to handle interactions for INSendMessageIntent.
 // You will want to replace this or add other intents as appropriate.
@@ -20,6 +21,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling, UITable
     @IBOutlet var tableView: UITableView!
     var dataList:[Toots] = []
     var responseJson = Dictionary<String, AnyObject>()
+    var user: User = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +33,16 @@ class IntentViewController: UIViewController, INUIHostedViewControlling, UITable
     }
 
     func configureView(for parameters: Set<INParameter>, of interaction: INInteraction, interactiveBehavior: INUIInteractiveBehavior, context: INUIHostedViewContext, completion: @escaping (Bool, Set<INParameter>, CGSize) -> Void) {
-        guard interaction.intent is TimelineIntent else {
-            completion(false, Set(), .zero)
+        guard let intent = interaction.intent as? TimelineIntent else {
+            completion(true, parameters, self.desiredSize)
             return
         }
-        
+        if intent.access_token != nil && intent.domain != nil {
+            user.access_token = intent.access_token!
+            user.domain = intent.domain!
+        } else {
+            return
+        }
         completion(true, parameters, self.desiredSize)
     }
 
@@ -65,14 +72,11 @@ class IntentViewController: UIViewController, INUIHostedViewControlling, UITable
     }
 
     func reloadListDatas() {
-        let domain = "mstdn.maud.io"
-        let mail = "syankenpon@gmail.com"
-        let pass = "Tonarino10106"
         let api = APIController()
-
-        responseJson = api.regist(domain: domain, responseJson: responseJson)!
-        responseJson = api.loginAuth(domain: domain, mail: mail, pass: pass, responseJson: responseJson)!
-        dataList = api.getTl(domain: domain, responseJson: responseJson)
+        dataList = api.getTlWithToken(domain: user.domain, access_token: user.access_token)
+        if dataList.isEmpty {
+            return
+        }
         self.tableView.reloadData()
     }
 }

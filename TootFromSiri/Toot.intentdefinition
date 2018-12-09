@@ -107,7 +107,7 @@
 			<key>INIntentDescriptionID</key>
 			<string>OHzUVG</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>1</integer>
+			<integer>3</integer>
 			<key>INIntentName</key>
 			<string>Timeline</string>
 			<key>INIntentParameterCombinations</key>
@@ -134,11 +134,23 @@
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
 					<key>INIntentParameterName</key>
-					<string>content</string>
+					<string>domain</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
 					<false/>
 					<key>INIntentParameterTag</key>
-					<integer>1</integer>
+					<integer>2</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>2</integer>
+					<key>INIntentParameterName</key>
+					<string>access_token</string>
+					<key>INIntentParameterSupportsMultipleValues</key>
+					<false/>
+					<key>INIntentParameterTag</key>
+					<integer>3</integer>
 					<key>INIntentParameterType</key>
 					<string>String</string>
 				</dict>

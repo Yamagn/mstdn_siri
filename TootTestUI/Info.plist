@@ -26,6 +26,7 @@
 		<dict>
 			<key>IntentsSupported</key>
 			<array>
+				<string>LetstootIntent</string>
 				<string>TimelineIntent</string>
 			</array>
 		</dict>

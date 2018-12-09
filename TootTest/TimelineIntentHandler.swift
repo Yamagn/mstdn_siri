@@ -24,7 +24,6 @@ class TimelineIntentHandler: NSObject, TimelineIntentHandling {
         if dataList.isEmpty {
             completion(TimelineIntentResponse(code: .inProgress, userActivity: nil))
         }
-        intent.content = "aaa"
         completion(TimelineIntentResponse(code: .success, userActivity: nil))
     }
 }

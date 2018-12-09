@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		257F2899635F2B495DBD0C7D /* Pods_TootTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DE1E59F7E6CC43D6B9D6F3 /* Pods_TootTest.framework */; };
+		5216B1557E5AC0F8500E2C1F /* Pods_TootFromSiriUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E759CD93E5735AB5D652F327 /* Pods_TootFromSiriUITests.framework */; };
 		521E8B4E21560FF700814270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B4D21560FF700814270 /* AppDelegate.swift */; };
 		521E8B5021560FF700814270 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E8B4F21560FF700814270 /* ViewController.swift */; };
 		521E8B5321560FF700814270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E8B5121560FF700814270 /* Main.storyboard */; };
@@ -46,6 +48,9 @@
 		52E598B821A12FA8001D89CA /* TimelineIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E598B321A12BF6001D89CA /* TimelineIntentHandler.swift */; };
 		52E598BD21A13407001D89CA /* TootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E598BB21A13407001D89CA /* TootCell.swift */; };
 		52E598BE21A13407001D89CA /* TootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E598BC21A13407001D89CA /* TootCell.xib */; };
+		60C34DF4781A68C8E1121C9C /* Pods_TootTestUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E3E469DBC579E3079F7908 /* Pods_TootTestUI.framework */; };
+		DEF91AE791C497CA37C8D896 /* Pods_TootFromSiri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F0B4A2DE098EF6471C5990 /* Pods_TootFromSiri.framework */; };
+		E9B140138458CBF024E5C32D /* Pods_TootFromSiriTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A974D37007043F6BC5235C72 /* Pods_TootFromSiriTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +100,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1276635929080CFF35F7D1BB /* Pods-TootTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TootTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-TootTest/Pods-TootTest.release.xcconfig"; sourceTree = "<group>"; };
+		24D22E7F87118D10806500FC /* Pods-TootTestUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TootTestUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-TootTestUI/Pods-TootTestUI.release.xcconfig"; sourceTree = "<group>"; };
+		25F0B4A2DE098EF6471C5990 /* Pods_TootFromSiri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TootFromSiri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C5958300CC98A70C26C4AA7 /* Pods-TootTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TootTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TootTest/Pods-TootTest.debug.xcconfig"; sourceTree = "<group>"; };
+		32DE1E59F7E6CC43D6B9D6F3 /* Pods_TootTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TootTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39651DC18067A9CD025DB244 /* Pods-TootFromSiriTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TootFromSiriTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TootFromSiriTests/Pods-TootFromSiriTests.debug.xcconfig"; sourceTree = "<group>"; };
 		521E8B4A21560FF700814270 /* TootFromSiri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TootFromSiri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521E8B4D21560FF700814270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		521E8B4F21560FF700814270 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +136,15 @@
 		52E598B321A12BF6001D89CA /* TimelineIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineIntentHandler.swift; sourceTree = "<group>"; };
 		52E598BB21A13407001D89CA /* TootCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootCell.swift; sourceTree = "<group>"; };
 		52E598BC21A13407001D89CA /* TootCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TootCell.xib; sourceTree = "<group>"; };
+		7610BF3927143C6A040A54CA /* Pods-TootFromSiriTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TootFromSiriTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TootFromSiriTests/Pods-TootFromSiriTests.release.xcconfig"; sourceTree = "<group>"; };
+		83E3E469DBC579E3079F7908 /* Pods_TootTestUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TootTestUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9590667878403F261D8CDF53 /* Pods-TootTestUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TootTestUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TootTestUI/Pods-TootTestUI.debug.xcconfig"; sourceTree = "<group>"; };
+		A9333A26766C5F7A68E8C6EF /* Pods-TootFromSiri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TootFromSiri.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TootFromSiri/Pods-TootFromSiri.debug.xcconfig"; sourceTree = "<group>"; };
+		A974D37007043F6BC5235C72 /* Pods_TootFromSiriTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TootFromSiriTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAAA1AFBD5B2810E9DA03CAC /* Pods-TootFromSiriUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TootFromSiriUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TootFromSiriUITests/Pods-TootFromSiriUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D0DE993D64B790B251B72CBD /* Pods-TootFromSiri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TootFromSiri.release.xcconfig"; path = "Pods/Target Support Files/Pods-TootFromSiri/Pods-TootFromSiri.release.xcconfig"; sourceTree = "<group>"; };
+		E759CD93E5735AB5D652F327 /* Pods_TootFromSiriUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TootFromSiriUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF51A9D654AD3CB9586CD901 /* Pods-TootFromSiriUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TootFromSiriUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TootFromSiriUITests/Pods-TootFromSiriUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF91AE791C497CA37C8D896 /* Pods_TootFromSiri.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9B140138458CBF024E5C32D /* Pods_TootFromSiriTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5216B1557E5AC0F8500E2C1F /* Pods_TootFromSiriUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				257F2899635F2B495DBD0C7D /* Pods_TootTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52989074217C31B900E00C6D /* IntentsUI.framework in Frameworks */,
+				60C34DF4781A68C8E1121C9C /* Pods_TootTestUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +202,7 @@
 				523CEA5C217AB6F6004E18DE /* TootTest */,
 				52237A12217311C3003DFCA9 /* Frameworks */,
 				521E8B4B21560FF700814270 /* Products */,
+				C764965B6C802D90E2C6F0E6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,6 +258,11 @@
 			isa = PBXGroup;
 			children = (
 				52237A13217311C3003DFCA9 /* IntentsUI.framework */,
+				25F0B4A2DE098EF6471C5990 /* Pods_TootFromSiri.framework */,
+				A974D37007043F6BC5235C72 /* Pods_TootFromSiriTests.framework */,
+				E759CD93E5735AB5D652F327 /* Pods_TootFromSiriUITests.framework */,
+				32DE1E59F7E6CC43D6B9D6F3 /* Pods_TootTest.framework */,
+				83E3E469DBC579E3079F7908 /* Pods_TootTestUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -259,6 +290,23 @@
 			path = TootTestUI;
 			sourceTree = "<group>";
 		};
+		C764965B6C802D90E2C6F0E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9333A26766C5F7A68E8C6EF /* Pods-TootFromSiri.debug.xcconfig */,
+				D0DE993D64B790B251B72CBD /* Pods-TootFromSiri.release.xcconfig */,
+				39651DC18067A9CD025DB244 /* Pods-TootFromSiriTests.debug.xcconfig */,
+				7610BF3927143C6A040A54CA /* Pods-TootFromSiriTests.release.xcconfig */,
+				EF51A9D654AD3CB9586CD901 /* Pods-TootFromSiriUITests.debug.xcconfig */,
+				BAAA1AFBD5B2810E9DA03CAC /* Pods-TootFromSiriUITests.release.xcconfig */,
+				2C5958300CC98A70C26C4AA7 /* Pods-TootTest.debug.xcconfig */,
+				1276635929080CFF35F7D1BB /* Pods-TootTest.release.xcconfig */,
+				9590667878403F261D8CDF53 /* Pods-TootTestUI.debug.xcconfig */,
+				24D22E7F87118D10806500FC /* Pods-TootTestUI.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -266,10 +314,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 521E8B7221560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiri" */;
 			buildPhases = (
+				EA21B981CEC233A66FCFA416 /* [CP] Check Pods Manifest.lock */,
 				521E8B4621560FF700814270 /* Sources */,
 				521E8B4721560FF700814270 /* Frameworks */,
 				521E8B4821560FF700814270 /* Resources */,
 				521E8B8D215610C100814270 /* Embed App Extensions */,
+				0E77DEB978D5FA36960CAEA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,6 +336,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 521E8B7521560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiriTests" */;
 			buildPhases = (
+				9D9B029E16DE9E1BDE697715 /* [CP] Check Pods Manifest.lock */,
 				521E8B5A21560FF900814270 /* Sources */,
 				521E8B5B21560FF900814270 /* Frameworks */,
 				521E8B5C21560FF900814270 /* Resources */,
@@ -304,6 +355,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 521E8B7821560FF900814270 /* Build configuration list for PBXNativeTarget "TootFromSiriUITests" */;
 			buildPhases = (
+				7D87C9F79E6C42F5CD018BA8 /* [CP] Check Pods Manifest.lock */,
 				521E8B6521560FF900814270 /* Sources */,
 				521E8B6621560FF900814270 /* Frameworks */,
 				521E8B6721560FF900814270 /* Resources */,
@@ -322,6 +374,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 523CEA76217AB6F7004E18DE /* Build configuration list for PBXNativeTarget "TootTest" */;
 			buildPhases = (
+				E407027C00BE9401BD4EC876 /* [CP] Check Pods Manifest.lock */,
 				523CEA57217AB6F6004E18DE /* Sources */,
 				523CEA58217AB6F6004E18DE /* Frameworks */,
 				523CEA59217AB6F6004E18DE /* Resources */,
@@ -339,6 +392,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5298907F217C31BA00E00C6D /* Build configuration list for PBXNativeTarget "TootTestUI" */;
 			buildPhases = (
+				8765CD5AE4A641C0C4885D58 /* [CP] Check Pods Manifest.lock */,
 				5298906F217C31B900E00C6D /* Sources */,
 				52989070217C31B900E00C6D /* Frameworks */,
 				52989071217C31B900E00C6D /* Resources */,
@@ -451,6 +505,143 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E77DEB978D5FA36960CAEA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TootFromSiri/Pods-TootFromSiri-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TootFromSiri/Pods-TootFromSiri-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D87C9F79E6C42F5CD018BA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TootFromSiriUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8765CD5AE4A641C0C4885D58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TootTestUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D9B029E16DE9E1BDE697715 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TootFromSiriTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E407027C00BE9401BD4EC876 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TootTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA21B981CEC233A66FCFA416 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TootFromSiri-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		521E8B4621560FF700814270 /* Sources */ = {
@@ -690,6 +881,7 @@
 		};
 		521E8B7321560FF900814270 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9333A26766C5F7A68E8C6EF /* Pods-TootFromSiri.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -710,6 +902,7 @@
 		};
 		521E8B7421560FF900814270 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0DE993D64B790B251B72CBD /* Pods-TootFromSiri.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -730,6 +923,7 @@
 		};
 		521E8B7621560FF900814270 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39651DC18067A9CD025DB244 /* Pods-TootFromSiriTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -751,6 +945,7 @@
 		};
 		521E8B7721560FF900814270 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7610BF3927143C6A040A54CA /* Pods-TootFromSiriTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -772,6 +967,7 @@
 		};
 		521E8B7921560FF900814270 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF51A9D654AD3CB9586CD901 /* Pods-TootFromSiriUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -792,6 +988,7 @@
 		};
 		521E8B7A21560FF900814270 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAAA1AFBD5B2810E9DA03CAC /* Pods-TootFromSiriUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -812,6 +1009,7 @@
 		};
 		523CEA77217AB6F7004E18DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C5958300CC98A70C26C4AA7 /* Pods-TootTest.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -833,6 +1031,7 @@
 		};
 		523CEA78217AB6F7004E18DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1276635929080CFF35F7D1BB /* Pods-TootTest.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -853,6 +1052,7 @@
 		};
 		52989080217C31BA00E00C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9590667878403F261D8CDF53 /* Pods-TootTestUI.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WX5RLE299P;
@@ -872,6 +1072,7 @@
 		};
 		52989081217C31BA00E00C6D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24D22E7F87118D10806500FC /* Pods-TootTestUI.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WX5RLE299P;
