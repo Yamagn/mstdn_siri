@@ -8,6 +8,8 @@
 
 import Foundation
 
+let api = APIController()
+
 class HttpClientImpl {
     private let session: URLSession
     public  init(config: URLSessionConfiguration? = nil) {
@@ -55,7 +57,7 @@ class APIController {
             request.httpBody = try JSONSerialization.data(withJSONObject: registBody, options: .prettyPrinted)
             
             let session = HttpClientImpl()
-            var (data, _, _) = session.execute(request: request as URLRequest)
+            let (data, _, _) = session.execute(request: request as URLRequest)
             if data == nil {
                 return nil
             }
@@ -83,7 +85,7 @@ class APIController {
             request.httpBody = try JSONSerialization.data(withJSONObject: loginBody, options: .prettyPrinted)
             
             let session = HttpClientImpl()
-            var (data, _, _) = session.execute(request: request as URLRequest)
+            let (data, _, _) = session.execute(request: request as URLRequest)
             return try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as? Dictionary<String, AnyObject>
         } catch {
             return nil
@@ -124,6 +126,24 @@ class APIController {
             return []
         }
         return try! JSONDecoder().decode([Toots].self, from: jsonData as Data)
+    }
+    
+    func tootWithToken(domain: String, content: String, access_token: String) -> Dictionary<String, AnyObject>? {
+        let tootUrl = URL(string: "https://" + domain + "/api/v1/statuses")!
+        let tootBody: [String: String] = ["access_token": access_token, "status": content, "visibility": "public"]
+        do {
+            var request: URLRequest = URLRequest(url: tootUrl)
+            
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = try JSONSerialization.data(withJSONObject: tootBody, options: .prettyPrinted)
+            
+            let session = HttpClientImpl()
+            let (data, _, _) = session.execute(request: request as URLRequest)
+            return try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as? Dictionary<String, AnyObject>
+        } catch {
+            return nil
+        }
     }
     
     func getTlWithToken(domain: String, access_token: String) -> [Toots] {

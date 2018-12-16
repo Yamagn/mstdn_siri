@@ -7,23 +7,17 @@
 //
 
 import Foundation
+import RealmSwift
 
 class LetstootIntentHandler: NSObject ,LetstootIntentHandling {
-    let api = APIController()
     var responseJson = Dictionary<String, AnyObject>()
-    
-    let domain = "mstdn.maud.io"
-    let mail = "syankenpon@gmail.com"
-    let pass = "Tonarino10106"
     
     func handle(intent: LetstootIntent, completion: @escaping (LetstootIntentResponse) -> Void) {
         guard let content = intent.content else {
-            completion(LetstootIntentResponse(code: .failure, userActivity: nil))
+            completion(LetstootIntentResponse(code: .inProgress, userActivity: nil))
             return
         }
-        responseJson = api.regist(domain: domain, responseJson: responseJson)!
-        responseJson = api.loginAuth(domain: domain, mail: mail, pass: pass, responseJson: responseJson)!
-        responseJson = api.toot(domain: domain, content: content, responseJson: responseJson)!
+        responseJson = api.tootWithToken(domain: Info.domain, content: content, access_token:Info.access_token)!
         completion(LetstootIntentResponse(code: .success, userActivity: nil))
     }
 }

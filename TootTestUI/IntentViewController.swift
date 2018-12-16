@@ -21,7 +21,6 @@ class IntentViewController: UIViewController, INUIHostedViewControlling, UITable
     @IBOutlet var tableView: UITableView!
     var dataList:[Toots] = []
     var responseJson = Dictionary<String, AnyObject>()
-    var user: User = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +32,8 @@ class IntentViewController: UIViewController, INUIHostedViewControlling, UITable
     }
 
     func configureView(for parameters: Set<INParameter>, of interaction: INInteraction, interactiveBehavior: INUIInteractiveBehavior, context: INUIHostedViewContext, completion: @escaping (Bool, Set<INParameter>, CGSize) -> Void) {
-        guard let intent = interaction.intent as? TimelineIntent else {
-            completion(true, parameters, self.desiredSize)
-            return
-        }
-        if intent.access_token != nil && intent.domain != nil {
-            user.access_token = intent.access_token!
-            user.domain = intent.domain!
-        } else {
+        guard interaction.intent is TimelineIntent else {
+            completion(false, Set(), .zero)
             return
         }
         completion(true, parameters, self.desiredSize)
@@ -72,8 +65,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling, UITable
     }
 
     func reloadListDatas() {
-        let api = APIController()
-        dataList = api.getTlWithToken(domain: user.domain, access_token: user.access_token)
+        dataList = api.getTlWithToken(domain: Info.domain, access_token: Info.access_token)
         if dataList.isEmpty {
             return
         }

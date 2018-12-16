@@ -10,6 +10,13 @@ import UIKit
 import Intents
 import RealmSwift
 
+var realm = try! Realm()
+var user: User = User()
+public class Info {
+    static var access_token = user.access_token
+    static var domain = user.domain
+}
+
 class User: Object {
     @objc dynamic var domain: String = ""
     @objc dynamic var mail: String = ""
@@ -18,9 +25,6 @@ class User: Object {
 }
 
 class ViewController: UIViewController {
-    
-    var api = APIController()
-    var realm = try! Realm()
     
     // Mastodonのインスタンスから返ってくるjson格納用
     var responseJson = Dictionary<String, AnyObject>()
@@ -33,7 +37,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var mailText: UITextField!
     @IBOutlet weak var passText: UITextField!
     @IBOutlet weak var button: UIButton!
-    var user: User = User()
     
     var tootContent: String? = nil;
     
@@ -48,8 +51,8 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         if button.currentTitle == "ログアウト" {
-            try! self.realm.write {
-                self.realm.deleteAll()
+            try! realm.write {
+                realm.deleteAll()
             }
             domainText.isHidden = false
             mailText.isHidden = false
@@ -78,50 +81,39 @@ class ViewController: UIViewController {
             
             present(alert, animated: true, completion: nil)
         }
-        do{
-            responseJson = api.regist(domain: domainText.text!, responseJson: responseJson)!
-            responseJson = api.loginAuth(domain: domainText.text!, mail: mailText.text!, pass: passText.text!, responseJson: responseJson)!
-            Indicator.stopAnimating()
-            let user = User()
-            user.domain = self.domainText.text!
-            user.mail = self.mailText.text!
-            user.pass = self.passText.text!
-            user.access_token = self.responseJson["access_token"] as! String
-            try! self.realm.write {
-                self.realm.add(user)
-            }
-            self.domainText.isHidden = true
-            self.mailText.isHidden = true
-            self.passText.isHidden = true
-            self.button.setTitle("ログアウト", for: .normal)
-            let alert = UIAlertController(title: "成功", message: "ログインに成功しました", preferredStyle: UIAlertController.Style.alert)
-            let defaultAction: UIAlertAction = UIAlertAction(title: "閉じる", style: UIAlertAction.Style.cancel, handler:{
-                (action: UIAlertAction!) -> Void in
-                return
-            })
-            
-            alert.addAction(defaultAction)
-            self.present(alert, animated: true, completion: nil)
-        } catch {
-            let alert = UIAlertController(title: "失敗", message: "ログインに失敗しました", preferredStyle: UIAlertController.Style.alert)
-            let defaultAction: UIAlertAction = UIAlertAction(title: "閉じる", style: UIAlertAction.Style.cancel, handler:{
-                (action: UIAlertAction!) -> Void in
-                self.navigationController?.popViewController(animated: true)
-            })
-            
-            alert.addAction(defaultAction)
-            
-            self.present(alert, animated: true, completion: nil)
+        responseJson = api.regist(domain: domainText.text!, responseJson: responseJson)!
+        responseJson = api.loginAuth(domain: domainText.text!, mail: mailText.text!, pass: passText.text!, responseJson: responseJson)!
+        Indicator.stopAnimating()
+        let user = User()
+        user.domain = self.domainText.text!
+        user.mail = self.mailText.text!
+        user.pass = self.passText.text!
+        user.access_token = self.responseJson["access_token"] as! String
+        try! realm.write {
+            realm.add(user)
         }
+        self.domainText.isHidden = true
+        self.mailText.isHidden = true
+        self.passText.isHidden = true
+        self.button.setTitle("ログアウト", for: .normal)
+        let alert = UIAlertController(title: "成功", message: "ログインに成功しました", preferredStyle: UIAlertController.Style.alert)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "閉じる", style: UIAlertAction.Style.cancel, handler:{
+            (action: UIAlertAction!) -> Void in
+            return
+        })
+        
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func TootButton(_ sender: Any) {
         Indicator.startAnimating()
-        responseJson = api.toot(domain: domainText.text!, content: TootContent.text!, responseJson: responseJson)!
+        responseJson = api.tootWithToken(domain: user.domain, content: TootContent.text!, access_token: user.access_token)!
         Indicator.stopAnimating()
         let alert = UIAlertController(title: "成功！", message: "トゥートしました", preferredStyle: UIAlertController.Style.alert)
         let defaultAction: UIAlertAction = UIAlertAction(title: "閉じる", style: UIAlertAction.Style.cancel, handler:{
             (action: UIAlertAction!) -> Void in
+            self.TootContent.text = nil
         });
         
         alert.addAction(defaultAction)
@@ -133,24 +125,6 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "siriSetting", sender: nil)
     }
     
-    func donateInteraction() {
-        let intent = TimelineIntent()
-        intent.suggestedInvocationPhrase = "タイムラインを取得"
-        intent.access_token = self.user.access_token
-        intent.domain = self.user.domain
-
-        let interaction = INInteraction(intent: intent, response: nil)
-        interaction.donate{ (error) in
-            if error != nil {
-                if error != nil {
-                    print("Error")
-                } else {
-                    print("Successfully donated interaction")
-                }
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -160,10 +134,11 @@ class ViewController: UIViewController {
             mailText.isHidden = true
             passText.isHidden = true
             button.setTitle("ログアウト", for: .normal)
-            self.user = users[0]
+            user = users[0]
+            print(Info.access_token)
+            print(Info.domain)
         }
         self.Indicator.hidesWhenStopped = true
-        donateInteraction()
     }
 }
 

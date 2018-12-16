@@ -170,8 +170,19 @@
                                     <action selector="settingClicked:" destination="ZPx-EA-fpN" eventType="touchUpInside" id="Zvc-vd-kIe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイムラインをSiriで表示させる" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="684-Jk-JgI">
+                                <rect key="frame" x="61" y="407.5" width="253" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ugz-96-Fxp" firstAttribute="bottom" secondItem="684-Jk-JgI" secondAttribute="bottom" constant="239" id="5x3-4H-efn"/>
+                            <constraint firstItem="ugz-96-Fxp" firstAttribute="trailing" secondItem="684-Jk-JgI" secondAttribute="trailing" constant="61" id="L8X-bL-mCR"/>
+                            <constraint firstItem="684-Jk-JgI" firstAttribute="leading" secondItem="ugz-96-Fxp" secondAttribute="leading" constant="61" id="kVr-Ht-WeW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ugz-96-Fxp"/>
                     </view>
                     <connections>

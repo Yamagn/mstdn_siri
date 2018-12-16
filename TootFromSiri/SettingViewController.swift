@@ -15,26 +15,48 @@ class SettingViewController: UIViewController{
     @IBOutlet weak var contentText: UITextField!
     @IBOutlet var settingView: UIView!
     
-    private var intent = LetstootIntent()
+    private var tootIntent = LetstootIntent()
+    private var tlIntent = TimelineIntent()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tlConfigureView()
+        
     }
     
-    private func configureView() {
+    private func tootConfigureView() {
         let addShortcutButton = INUIAddVoiceShortcutButton(style: .black)
         addShortcutButton.translatesAutoresizingMaskIntoConstraints = false
         settingView.addSubview(addShortcutButton)
         settingView.centerXAnchor.constraint(equalTo: addShortcutButton.centerXAnchor).isActive = true
         settingView.centerYAnchor.constraint(equalTo: addShortcutButton.centerYAnchor).isActive = true
-        addShortcutButton.addTarget(self, action: #selector(addToSiri(_:)), for: .touchUpInside)
+        addShortcutButton.addTarget(self, action: #selector(tootAddToSiri(_:)), for: .touchUpInside)
+    }
+    
+    private func tlConfigureView() {
+        let addShortcutButton = INUIAddVoiceShortcutButton(style: .black)
+        addShortcutButton.translatesAutoresizingMaskIntoConstraints = false
+        settingView.addSubview(addShortcutButton)
+        settingView.centerXAnchor.constraint(equalTo: addShortcutButton.centerXAnchor).isActive = true
+        settingView.bottomAnchor.constraint(equalTo: addShortcutButton.bottomAnchor, constant: 150).isActive = true
+        addShortcutButton.addTarget(self, action: #selector(tlAddToSiri(_:)), for: .touchUpInside)
     }
     
     @objc
-    func addToSiri(_ sender: Any) {
-        if let shortcut = INShortcut(intent: intent) {
-            let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
+    func tootAddToSiri(_ sender: Any) {
+        if let tootShortcut = INShortcut(intent: tootIntent) {
+            let viewController = INUIAddVoiceShortcutViewController(shortcut: tootShortcut)
+            viewController.modalPresentationStyle = .formSheet
+            viewController.delegate = self
+            present(viewController, animated: true, completion: nil)
+        }
+    }
+    
+    @objc
+    func tlAddToSiri(_ sender: Any) {
+        if let tlShortcut = INShortcut(intent: tlIntent) {
+            let viewController = INUIAddVoiceShortcutViewController(shortcut: tlShortcut)
             viewController.modalPresentationStyle = .formSheet
             viewController.delegate = self
             present(viewController, animated: true, completion: nil)
@@ -43,8 +65,10 @@ class SettingViewController: UIViewController{
     
     @IBAction func settingClicked(_ sender: Any) {
         if !contentText.text!.isEmpty{
-            intent.content = contentText.text
-            configureView()
+            tootIntent.content = contentText.text
+            tootIntent.domain = user.domain
+            tootIntent.access_token = user.access_token
+            tootConfigureView()
         } else {
             let controller = UIAlertController(title: nil, message: "内容を入力してください", preferredStyle: UIAlertController.Style.alert)
             controller.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
